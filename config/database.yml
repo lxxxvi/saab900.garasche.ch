@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: saab900_garasche_ch_development
+
+test:
+  <<: *default
+  database: saab900_garasche_ch_test
+
+production:
+  <<: *default
+  database: saab900_garasche_ch_production
+  username: saab900_garasche_ch
+  password: <%= ENV['SAAB900_GARASCHE_CH_DATABASE_PASSWORD'] %>
