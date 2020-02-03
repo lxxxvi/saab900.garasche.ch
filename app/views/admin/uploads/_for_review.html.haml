@@ -1,0 +1,23 @@
+= link_to 'Show approved', admin_uploads_path
+
+%h2 For review
+
+- if records.any?
+  %table
+    %thead
+      %tr
+        %th{ style: 'width: 50%;' } File
+        %th{ style: 'width: 25%;' }
+        %th{ style: 'width: 25%;' }
+    %tbody
+      - records.each do |record|
+        %tr
+          %td
+            = render 'uploads/file', record: record
+          %td
+            = form_with url: admin_upload_approval_path(record), method: :post do
+              = submit_tag 'Approve'
+          %td
+            = link_to 'Delete', admin_upload_path(record), method: :delete
+- else
+  none

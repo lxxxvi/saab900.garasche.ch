@@ -1,0 +1,11 @@
+%h1 Saab 900
+
+= render 'uploads/new'
+
+- if @records.any?
+  = raw pagy_nav(@pagy)
+
+  - @records.each do |record|
+    = render 'uploads/file', record: record
+- else
+  Hier ist noch nichts

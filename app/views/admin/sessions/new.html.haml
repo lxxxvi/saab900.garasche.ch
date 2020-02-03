@@ -1,0 +1,5 @@
+%h1 Sign in
+
+= form_with url: admin_session_path do |f|
+  = password_field_tag :password
+  = submit_tag 'Sign in'

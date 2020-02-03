@@ -2,10 +2,16 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Saab 900
+    %title Saab 900 ADMIN
     = csrf_meta_tags
     = csp_meta_tag
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
   %body
+    - flash.each do |f|
+      = f.last
+
+    - if admin_signed_in?
+      = link_to 'Sign out', admin_session_path, method: :delete
+
     = yield
