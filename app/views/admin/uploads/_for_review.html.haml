@@ -15,9 +15,8 @@
           %td
             = render 'uploads/file', record: record
           %td
-            = form_with url: admin_upload_approval_path(record), method: :post do
-              = submit_tag 'Approve'
+            = render 'approval_form', record: record
           %td
-            = link_to 'Delete', admin_upload_path(record), method: :delete
+            = render 'deletion_form', record: record
 - else
   none

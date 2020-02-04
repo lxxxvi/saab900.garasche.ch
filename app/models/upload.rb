@@ -7,7 +7,13 @@ class Upload < ApplicationRecord
   scope :for_review, -> { where(approved_at: nil) }
   scope :ordered_chronologically, -> { order(approved_at: :desc) }
 
+  before_destroy :delete_file
+
   def approve!
     update(approved_at: Time.zone.now)
+  end
+
+  def delete_file
+    file.file.delete
   end
 end
