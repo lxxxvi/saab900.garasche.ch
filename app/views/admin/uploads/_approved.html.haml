@@ -1,6 +1,13 @@
-= link_to 'Show for review', admin_uploads_path(display: 'review')
+- number_to_review = Upload.for_review.count
 
-%h2 Approved
+- if number_to_review.positive?
+  %p.my-10.border-red-500.border.p-4
+    There is
+    = pluralize(number_to_review, "upload")
+    to be reviewed.
+    = link_to 'Show', admin_uploads_path(display: 'review')
+
+%h2.text-xl Approved
 
 - if records.any?
   %table

@@ -1,11 +1,9 @@
-%h1 Saab 900
+.mb-16
+  %h1.bg-red-800.text-white.text-right.pt-4.pb-2.px-4.tracking-widest.border-b-8.border-red-600.text-lg
+    Saab 900
 
-= render 'uploads/new'
+.my-16.mx-2
+  = render 'uploads/new'
 
-- if @records.any?
-  = raw pagy_nav(@pagy)
-
-  - @records.each do |record|
-    = render 'uploads/file', record: record
-- else
-  Hier ist noch nichts
+.my-16
+  = render 'uploads/index', records: @records

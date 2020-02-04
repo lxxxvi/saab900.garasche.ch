@@ -1,3 +1,5 @@
 = form_with model: Upload.new do |f|
-  = f.file_field :file
-  = f.submit 'Hochladen'
+  .ml-auto.mr-auto.text-center{ class: 'w-2/3' }
+    = f.file_field :file, class: 'file--input'
+    = f.label :file, 'Bild auswählen', class: 'file--label'
+    = f.submit 'senden', class: 'file--submit'
