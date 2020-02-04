@@ -1,3 +1,15 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :admin do
+    resource :session, only: %i[new create destroy]
+    resources :uploads, only: :index do
+      resource :approval, only: :create, module: :uploads
+      resource :deletion, only: :create, module: :uploads
+    end
+
+    root to: 'uploads#index'
+  end
+
+  resources :uploads, only: :create
+
+  root to: 'saab900#show'
 end

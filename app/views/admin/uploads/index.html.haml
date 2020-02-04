@@ -1,0 +1,7 @@
+%h1 Saab 900 Admin
+
+- if params[:display] == 'review'
+  = render 'for_review', records: @records
+- else
+  = render 'approved', records: @records
+
