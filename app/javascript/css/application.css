@@ -5,8 +5,19 @@
   @apply font-serif;
 }
 
-body {
-  @apply min-h-full;
+@media (min-width: 640px) {
+  body.saab900 {
+    @apply shadow-2xl;
+    width: 640px;
+  }
+}
+
+html.saab900 {
+  @apply h-full;
+}
+
+body.saab900 {
+  @apply h-full bg-red-100;
   display: grid;
   grid-template-rows: 1fr auto;
 }
@@ -20,7 +31,7 @@ a {
   grid-row-end: 3;
 }
 
-.file--input {
+/*.file--input {
   @apply opacity-0 absolute overflow-hidden;
   z-index: -1;
   width: 0.1px;
@@ -41,7 +52,32 @@ a {
 
 .file--submit:hover {
   @apply cursor-pointer bg-red-600;
+}*/
+
+.button {
+  @apply py-1 px-4 border border-gray-500 bg-white;
 }
+
+.button:hover {
+  @apply cursor-pointer;
+}
+
+.button-red {
+  @apply bg-red-800 text-white border-red-800;
+}
+
+.button-red:hover {
+  @apply bg-red-700;
+}
+
+.button-red-hollow {
+  @apply text-red-800 border-red-800;
+}
+
+.button-red-hollow:hover {
+  @apply text-red-600 border-red-400;
+}
+
 
 .image {
   @apply ml-auto mr-auto;

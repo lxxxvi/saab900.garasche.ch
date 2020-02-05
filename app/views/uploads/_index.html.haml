@@ -1,12 +1,11 @@
-.mt-24
-  - if records.any?
+- if records.any?
 
-    = raw pagy_nav(@pagy) if @pagy.pages > 1
+  = raw pagy_nav(@pagy) if @pagy.pages > 1
 
-    %ul
-      - records.each do |record|
-        %li.gallery-item= render 'uploads/file', record: record
+  %ul
+    - records.each do |record|
+      %li.gallery-item= render 'uploads/file', record: record
 
-  - else
-    .text-gray-500.text-center
-      Noch keinen Inhalt...
+- else
+  .text-gray-500.text-center
+    Noch keinen Inhalt...

@@ -8,10 +8,13 @@
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
   %body
-    - flash.each do |f|
-      = f.last
+    .m-4
+      - if admin_signed_in?
+        = link_to 'Sign out', admin_session_path, method: :delete
 
-    - if admin_signed_in?
-      = link_to 'Sign out', admin_session_path, method: :delete
+      - if flash.any?
+        .border.border-red-500
+        - flash.each do |f|
+          = f.last
 
-    = yield
+      = yield
