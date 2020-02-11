@@ -4,7 +4,7 @@
       .flash{ class: "flash-#{key}" }= message
 
 .my-16.text-center
-  = link_to t('.upload_your_picture'), new_upload_path
+  = link_to t('.upload_your_picture'), new_upload_path, class: 'button button-red'
 
 .my-24
   = render 'uploads/index', records: @records

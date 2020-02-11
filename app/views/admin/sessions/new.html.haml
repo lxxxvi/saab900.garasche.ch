@@ -1,5 +1,4 @@
-%h1 Sign in
-
 = form_with url: admin_session_path do |f|
-  = password_field_tag :password, nil, class: 'py-1 border border-gray-500'
-  = submit_tag 'Sign in', class: 'button button-red'
+  = label_tag :password, t('general.password'), class: 'block text-sm'
+  = password_field_tag :password, nil, class: 'p-1 border border-gray-500 bg-gray-100'
+  = submit_tag t('general.sign_in'), class: 'button button-red'

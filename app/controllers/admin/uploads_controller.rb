@@ -8,10 +8,6 @@ class Admin::UploadsController < Admin::BaseController
   private
 
   def find_uploads
-    scope = Upload.order(created_at: :desc)
-
-    return scope.for_review if params[:display] == 'review'
-
-    scope.approved
+    @find_uploads ||= Upload.order(created_at: :desc)
   end
 end
