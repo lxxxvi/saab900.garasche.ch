@@ -1,0 +1,5 @@
+de:
+  uploads:
+    create:
+      success: 'Upload erfolgreich'
+      alert: 'Irgendwas hat nicht geklappt, versuchs nochmal ;-)'

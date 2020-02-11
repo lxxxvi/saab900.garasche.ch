@@ -2,10 +2,10 @@ class UploadsController < ApplicationController
   def create
     upload = Upload.new(upload_params)
 
-    if upload.save!
-      flash.now[:success] = 'Upload erfolreich'
+    if upload.save
+      flash[:success] = t('.success')
     else
-      flash.now[:alert] = 'Irgendwas hat nicht geklappt'
+      flash[:alert] = t('.alert')
     end
 
     redirect_to root_path
