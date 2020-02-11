@@ -39,7 +39,7 @@ class FileUploader < CarrierWave::Uploader::Base
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist
-    %w(jpg jpeg png pdf)
+    %w[jpg jpeg png pdf]
   end
 
   # Override the filename of the uploaded files:
@@ -49,8 +49,6 @@ class FileUploader < CarrierWave::Uploader::Base
   # end
 
   def auto_orient
-    manipulate! do |img|
-      img.auto_orient!
-    end
+    manipulate!(&:auto_orient!)
   end
 end

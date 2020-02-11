@@ -1,4 +1,4 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class Admin::ApprovalsTest < ApplicationSystemTestCase
   test 'admin deletes an upload' do
