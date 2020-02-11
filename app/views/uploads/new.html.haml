@@ -1,0 +1,10 @@
+= form_with model: @upload do |f|
+  .ml-auto.mr-auto.text-center{ class: 'w-2/3' }
+    .flex
+      .w-full= f.label :file, t('.select_picture')
+    .flex.my-4
+      .w-full= f.file_field :file
+    .flex.my-4
+      .w-full= f.submit t('.submit'), class: 'button button-red'
+    .flex.mt-6
+      .w-full= link_to t('general.back'), root_path, class: 'text-sm'

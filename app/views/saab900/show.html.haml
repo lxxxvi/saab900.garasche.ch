@@ -1,9 +1,10 @@
-.mb-16
-  %h1.bg-red-800.text-white.text-right.pt-4.pb-2.px-4.tracking-widest.border-b-8.border-red-600.text-lg
-    Saab 900
+- if flash.any?
+  .my-16.text-center
+    - flash.each do |key, message|
+      .flash{ class: "flash-#{key}" }= message
 
-.my-16.mx-2
-  = render 'uploads/new'
+.my-16.text-center
+  = link_to t('.upload_your_picture'), new_upload_path
 
 .my-24
   = render 'uploads/index', records: @records

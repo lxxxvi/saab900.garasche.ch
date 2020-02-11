@@ -1,19 +1,25 @@
 class UploadsController < ApplicationController
-  def create
-    upload = Upload.new(upload_params)
+  def new
+    @upload = Upload.new
+  end
 
-    if upload.save
-      flash[:success] = t('.success')
+  def create
+    @upload = Upload.new(upload_params)
+
+    if @upload.save
+      flash[:notice] = t('.notice')
+      redirect_to root_path
     else
       flash[:alert] = t('.alert')
+      render :new
     end
-
-    redirect_to root_path
   end
 
   private
 
   def upload_params
+    return unless params.include?(:upload)
+
     params.require(:upload).permit(:file)
   end
 end

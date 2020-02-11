@@ -10,7 +10,15 @@ de:
         success: 'Eintrag wurde akzeptiert'
       deletions:
         success: 'Eintrag wurde gelöscht'
+  general:
+    back: 'Zurück'
+  saab900:
+    show:
+      upload_your_picture: 'Dein Bild hochladen'
   uploads:
     create:
-      success: 'Upload erfolgreich'
+      notice: 'Vielen Dank. Dein Bild wurde hochgeladen, wir geben es in kürze frei.'
       alert: 'Irgendwas hat nicht geklappt, versuchs nochmal ;-)'
+    new:
+      select_picture: 'Bild auswählen'
+      submit: 'Hochladen'

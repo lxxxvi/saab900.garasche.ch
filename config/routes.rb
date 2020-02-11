@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     root to: 'uploads#index'
   end
 
-  resources :uploads, only: :create
+  resources :uploads, only: %i[new create]
 
   root to: 'saab900#show'
 end

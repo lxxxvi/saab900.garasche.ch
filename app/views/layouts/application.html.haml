@@ -12,6 +12,10 @@
     = stylesheet_pack_tag 'application'
   %body{ class: 'saab900 ml-auto mr-auto' }
     .main.bg-white
+      .mb-16
+        %h1.bg-red-800.text-white.text-right.pt-4.pb-2.px-4.tracking-widest.border-b-8.border-red-600.text-lg
+          Saab 900
+
       = yield
 
     %footer.footer.bg-red-200.text-right.px-4.py-6.tracking-wide.border-t-8.border-red-400.text-sm.text-red-800

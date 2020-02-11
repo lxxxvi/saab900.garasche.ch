@@ -1,8 +1,0 @@
-= form_with model: Upload.new do |f|
-  .ml-auto.mr-auto.text-center{ class: 'w-2/3' }
-    .mb-4
-      = f.label :file, 'Schick uns dein Bild', class: 'text-sm text-gray-600'
-    .my-4
-      = f.file_field :file
-    .mt-4
-      = f.submit 'senden', class: 'button button-red'
