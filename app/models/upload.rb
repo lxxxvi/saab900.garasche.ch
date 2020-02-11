@@ -9,6 +9,10 @@ class Upload < ApplicationRecord
 
   before_destroy :delete_file
 
+  def for_review?
+    approved_at.nil?
+  end
+
   def approve!
     update(approved_at: Time.zone.now)
   end

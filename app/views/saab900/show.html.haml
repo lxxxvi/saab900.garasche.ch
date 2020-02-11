@@ -1,11 +1,10 @@
-%h1 Saab 900
+- if flash.any?
+  .my-16.text-center
+    - flash.each do |key, message|
+      .flash{ class: "flash-#{key}" }= message
 
-= render 'uploads/new'
+.my-16.text-center
+  = link_to t('.upload_your_picture'), new_upload_path, class: 'button button-red'
 
-- if @records.any?
-  = raw pagy_nav(@pagy)
-
-  - @records.each do |record|
-    = render 'uploads/file', record: record
-- else
-  Hier ist noch nichts
+.my-24
+  = render 'uploads/index', records: @records

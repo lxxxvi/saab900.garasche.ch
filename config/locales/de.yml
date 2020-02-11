@@ -1,0 +1,48 @@
+de:
+  admin:
+    sessions:
+      login_first: 'Bitte zuerst einloggen'
+      create:
+        success: 'Login erfolgreich'
+        alert: 'Login fehlgeschlagen'
+    uploads:
+      approval_form:
+        approve: 'Annehmen'
+      approvals:
+        success: 'Beitrag angenommen'
+      deletion_form:
+        delete: 'Löschen'
+      deletions:
+        success: 'Beitrag gelöscht'
+      index:
+        approved_at: 'Angenommen am'
+        contribution:
+          one: 'Beitrag'
+          other: 'Beiträge'
+        ready_to_review:
+          one: 'Es steht 1 Beitrag zum prüfen bereit.'
+          other: 'Es stehen %{count} Beiträge zum prüfen bereit'
+        status: 'Status'
+
+  footer: |
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  general:
+    back: 'Zurück'
+    password: 'Passwort'
+    sign_in: 'Einloggen'
+    sign_out: 'Ausloggen'
+  saab900:
+    show:
+      upload_your_picture: 'Dein Bild hochladen'
+  uploads:
+    create:
+      notice: 'Vielen Dank. Dein Bild wurde hochgeladen, wir geben es in kürze frei.'
+      alert: 'Irgendwas hat nicht geklappt, versuchs nochmal ;-)'
+    new:
+      select_picture: 'Bild auswählen'
+      submit: 'Hochladen'

@@ -1,8 +1,8 @@
 class Admin::Uploads::ApprovalsController < Admin::BaseController
   def create
     find_upload.approve!
-    flash[:success] = 'Approved'
-    redirect_to admin_uploads_path(display: :review)
+    flash[:success] = t('.success')
+    redirect_to admin_uploads_path
   end
 
   private

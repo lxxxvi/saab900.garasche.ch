@@ -7,6 +7,9 @@ class Admin::BaseController < ApplicationController
   private
 
   def authenticate_admin
-    return redirect_to new_admin_session_path unless admin_signed_in?
+    return if admin_signed_in?
+
+    flash[:notice] = t('admin.sessions.login_first')
+    redirect_to new_admin_session_path
   end
 end

@@ -1,7 +1,27 @@
-%h1 Saab 900 Admin
+%h1= t('.contribution', count: 2)
 
-- if params[:display] == 'review'
-  = render 'for_review', records: @records
+- number_to_review = Upload.for_review.count
+
+- if number_to_review.positive?
+  %p.my-10.border-red-500.border.p-4
+    = t('.ready_to_review', count: number_to_review)
+
+- if @records.any?
+  - @records.each do |record|
+    .border-b.py-16
+      .flex.text-center
+        .w-full
+          = render 'uploads/file', record: record
+      .flex.text-center.mt-4
+        .w-full
+          .mb-4
+            - if record.for_review?
+              = render 'approval_form', record: record
+            - else
+              = t('.approved_at')
+              = record.approved_at
+          .mt-4
+            = render 'deletion_form', record: record
+
 - else
-  = render 'approved', records: @records
-
+  none

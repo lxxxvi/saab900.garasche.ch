@@ -1,24 +1,11 @@
-# README
+# Saab900 Garasche
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Heroku
 
-Things you may want to cover:
+Installed buildpacks:
 
-* Ruby version
+* [Imagemagick](https://elements.heroku.com/buildpacks/duckyteam/heroku-buildpack-imagemagick)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+heroku buildpacks:add https://github.com/DuckyTeam/heroku-buildpack-imagemagick --index 1 --app HEROKU_APP_NAME
+```

@@ -8,10 +8,19 @@
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
   %body
-    - flash.each do |f|
-      = f.last
+    .m-4
+      .text-xl.text-red-800.border-b.mb-8 Saab 900 Admin
 
-    - if admin_signed_in?
-      = link_to 'Sign out', admin_session_path, method: :delete
+      - if admin_signed_in?
+        .flex
+          .w-full.text-right
+            = link_to t('general.sign_out'),
+                      admin_session_path,
+                      method: :delete,
+                      class: 'button button-red-hollow text-xs'
 
-    = yield
+      - if flash.any?
+        - flash.each do |key, message|
+          .flash{ class: "flash-#{key}"}= message
+
+      = yield
