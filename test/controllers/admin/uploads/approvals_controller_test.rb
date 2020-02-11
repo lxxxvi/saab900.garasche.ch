@@ -15,6 +15,6 @@ class Admin::Uploads::ApprovalsControllerTest < ActionDispatch::IntegrationTest
 
     follow_redirect!
     assert_response :success
-    assert_equal 'Eintrag wurde akzeptiert', flash[:success]
+    assert_equal 'Beitrag angenommen', flash[:success]
   end
 end

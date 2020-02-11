@@ -32,11 +32,10 @@ class UploadsControllerTest < ActionDispatch::IntegrationTest
   def assert_success
     follow_redirect!
     assert_response :success
-    assert_equal 'Upload erfolgreich', flash[:success]
+    assert_equal 'Vielen Dank. Dein Bild wurde hochgeladen, wir geben es in kürze frei.', flash[:notice]
   end
 
   def assert_alert
-    follow_redirect!
     assert_response :success
     assert_equal 'Irgendwas hat nicht geklappt, versuchs nochmal ;-)', flash[:alert]
   end

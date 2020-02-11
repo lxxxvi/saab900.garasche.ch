@@ -9,14 +9,16 @@ de:
       approval_form:
         approve: 'Annehmen'
       approvals:
-        success: 'Eintrag wurde akzeptiert'
+        success: 'Beitrag angenommen'
       deletion_form:
         delete: 'Löschen'
       deletions:
-        success: 'Eintrag wurde gelöscht'
+        success: 'Beitrag gelöscht'
       index:
         approved_at: 'Angenommen am'
-        contribution: 'Beitrag'
+        contribution:
+          one: 'Beitrag'
+          other: 'Beiträge'
         ready_to_review:
           one: 'Es steht 1 Beitrag zum prüfen bereit.'
           other: 'Es stehen %{count} Beiträge zum prüfen bereit'

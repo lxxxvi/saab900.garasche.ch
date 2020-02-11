@@ -1,7 +1,10 @@
 class FileUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
+
+  process resize_to_limit: [1280, 720]
+  process :auto_orient
 
   # Choose what kind of storage to use for this uploader:
   storage(Rails.configuration.carrierwave_storage)
@@ -44,4 +47,10 @@ class FileUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  def auto_orient
+    manipulate! do |img|
+      img.auto_orient!
+    end
+  end
 end

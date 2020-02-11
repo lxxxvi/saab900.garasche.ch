@@ -10,6 +10,6 @@ class Admin::Uploads::DeletionsControllerTest < ActionDispatch::IntegrationTest
 
     follow_redirect!
     assert_response :success
-    assert_equal 'Eintrag wurde gelöscht', flash[:success]
+    assert_equal 'Beitrag gelöscht', flash[:success]
   end
 end
