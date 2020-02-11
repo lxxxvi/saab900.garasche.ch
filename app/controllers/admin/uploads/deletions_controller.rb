@@ -1,7 +1,7 @@
 class Admin::Uploads::DeletionsController < Admin::BaseController
   def create
     find_upload.destroy!
-    flash[:success] = 'Deleted'
+    flash[:success] = t('.success')
     redirect_to admin_uploads_path
   end
 

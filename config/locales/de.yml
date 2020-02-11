@@ -1,4 +1,15 @@
 de:
+  admin:
+    sessions:
+      login_first: 'Bitte zuerst einloggen'
+      create:
+        success: 'Login erfolgreich'
+        alert: 'Login fehlgeschlagen'
+    uploads:
+      approvals:
+        success: 'Eintrag wurde akzeptiert'
+      deletions:
+        success: 'Eintrag wurde gelöscht'
   uploads:
     create:
       success: 'Upload erfolgreich'
