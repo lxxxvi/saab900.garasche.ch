@@ -2,6 +2,9 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 
+require 'simplecov'
+SimpleCov.start 'rails'
+
 CarrierWave.configure do |config|
   config.enable_processing = false
   config.root = -> { Rails.root.join('tmp').to_s }
