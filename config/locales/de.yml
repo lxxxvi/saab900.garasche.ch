@@ -47,5 +47,9 @@ de:
       notice: 'Vielen Dank. Dein Bild wurde hochgeladen, wir geben es in kürze frei.'
       alert: 'Irgendwas hat nicht geklappt, versuchs nochmal ;-)'
     new:
+      how_it_works: 'So funktionierts'
+      how_it_works_description: |
+        Lade dein Bild hoch und wir schalten es innert kürze frei.
+        Erlaubte Formate sind: jpg, jpeg oder png
       select_picture: 'Bild auswählen'
       submit: 'Hochladen'
