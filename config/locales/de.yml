@@ -1,4 +1,7 @@
 de:
+  errors:
+    messages:
+      mini_magick_processing_error: "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}"
   admin:
     sessions:
       login_first: 'Bitte zuerst einloggen'
