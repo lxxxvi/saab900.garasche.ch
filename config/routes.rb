@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resource :session, only: %i[new create destroy]
     resources :uploads, only: :index do
-      resource :approval, only: :create, module: :uploads
+      resource :approval, only: %i[new create], module: :uploads
       resource :deletion, only: :create, module: :uploads
     end
 

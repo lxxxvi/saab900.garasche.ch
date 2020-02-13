@@ -5,6 +5,9 @@ class Admin::ApprovalsTest < ApplicationSystemTestCase
     sign_in_admin
 
     click_on 'Annehmen', match: :first
+    assert_selector 'label', text: 'Beschreibung'
+    fill_in 'Beschreibung', with: 'Beschreibung'
+    click_on 'Annehmen'
 
     assert_selector '.flash-success', text: 'Beitrag angenommen'
   end

@@ -11,12 +11,14 @@
     .border-b.py-16
       .flex.text-center
         .w-full
-          = render 'uploads/file', record: record
-      .flex.text-center.mt-4
+          = render 'uploads/file', record: record, thumbnail: true
         .w-full
           .mb-4
             - if record.for_review?
-              = render 'approval_form', record: record
+              = link_to t('.approve'),
+                        new_admin_upload_approval_path(record),
+                        class: 'button button-red'
+              / = render 'approval_form', record: record
             - else
               = t('.approved_at')
               = record.approved_at

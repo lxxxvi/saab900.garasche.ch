@@ -1,3 +1,4 @@
 image:
+  title: 'An image'
   file: 'image.png'
   comment: 'No comment'
