@@ -10,6 +10,12 @@ end
 class ActiveSupport::TestCase
   parallelize(workers: :number_of_processors)
   fixtures :all
+
+  def upload_file(file, expected_difference = 1)
+    assert_difference -> { Upload.count }, expected_difference do
+      post uploads_path, params: { upload: { file: file } }
+    end
+  end
 end
 
 class ActionDispatch::IntegrationTest

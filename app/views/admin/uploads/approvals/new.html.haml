@@ -1,0 +1,4 @@
+= form_with model: Admin::Upload::AprovalForm.new(record), method: :post do |f|
+  = label_tag :title, t('.title'), required: f.title_required?
+  = text_field_tag :title, nil, class: 'border border-gray-500'
+  = submit_tag t('.approve'), class: 'button button-red'

@@ -2,10 +2,19 @@ require 'test_helper'
 
 class Admin::Upload::ApprovalFormTest < ActiveSupport::TestCase
   test 'approve an image' do
-    assert false
+    upload = uploads(:image)
+    form = Admin::Upload::ApprovalForm.new(upload)
+    assert form.valid?
   end
 
   test 'approve a pdf' do
-    assert false
+    upload = uploads(:pdf)
+    form = Admin::Upload::ApprovalForm.new(upload)
+    assert_not form.valid?
+
+    assert_includes form.errors.to_a, 'Titel darf nicht leer sein'
+
+    form = Admin::Upload::ApprovalForm.new(upload, title: 'Title')
+    assert form.valid?
   end
 end
