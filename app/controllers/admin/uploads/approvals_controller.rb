@@ -1,4 +1,8 @@
 class Admin::Uploads::ApprovalsController < Admin::BaseController
+  def new
+    @upload = find_upload
+  end
+
   def create
     find_upload.approve!
     flash[:success] = t('.success')

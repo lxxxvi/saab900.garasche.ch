@@ -23,6 +23,10 @@ class Admin::Upload::ApprovalForm
     ActiveModel::Name.new(self, nil, 'Admin::Upload::Approval')
   end
 
+  def to_url
+    %i[admin upload approval]
+  end
+
   def title_required?
     pdf?
   end

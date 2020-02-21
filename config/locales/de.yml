@@ -19,15 +19,17 @@ de:
         success: 'Login erfolgreich'
         alert: 'Login fehlgeschlagen'
     uploads:
-      approval_form:
-        approve: 'Annehmen'
       approvals:
+        new:
+          approve: 'Annehmen'
+          title: 'Beschreibung'
         success: 'Beitrag angenommen'
       deletion_form:
         delete: 'Löschen'
       deletions:
         success: 'Beitrag gelöscht'
       index:
+        approve: 'Annehmen'
         approved_at: 'Angenommen am'
         contribution:
           one: 'Beitrag'
