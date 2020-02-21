@@ -1,7 +1,7 @@
-.ml-auto.mr-auto.text-center{ class: 'w-2/3' }
+.ml-auto.mr-auto.text-center
   = form_with model: @upload do |f|
     .flex
-      .w-full= f.label :file, t('.select_picture')
+      .w-full= f.label :file, t('.select_picture'), class: 'overflow-scroll'
     .flex.my-4
       .w-full= f.file_field :file
     .flex.my-4

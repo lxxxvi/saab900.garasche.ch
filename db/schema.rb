@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_12_142816) do
+ActiveRecord::Schema.define(version: 2020_02_03_164433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "uploads", force: :cascade do |t|
     t.string "file", null: false
+    t.string "uploads"
+    t.string "title"
     t.text "comment"
-    t.datetime "approved_at"
+    t.datetime "published_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "title"
   end
 
 end

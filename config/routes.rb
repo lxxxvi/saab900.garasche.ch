@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     resource :session, only: %i[new create destroy]
-    resources :uploads, only: :index do
-      resource :approval, only: %i[new create], module: :uploads
-      resource :deletion, only: :create, module: :uploads
-    end
-
+    resources :uploads, only: %i[index edit update destroy]
     root to: 'uploads#index'
   end
 

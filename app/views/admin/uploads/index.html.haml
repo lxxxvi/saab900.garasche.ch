@@ -1,29 +1,52 @@
-%h1= t('.contribution', count: 2)
+- publishable_count = Upload.publishable.count
 
-- number_to_review = Upload.for_review.count
-
-- if number_to_review.positive?
+- if publishable_count.positive?
   %p.my-10.border-red-500.border.p-4
-    = t('.ready_to_review', count: number_to_review)
+    = t('.publishable_contributions', count: publishable_count)
+
+%h1= t('.contribution', count: 2)
 
 - if @records.any?
   - @records.each do |record|
-    .border-b.py-16
-      .flex.text-center
-        .w-full
-          = render 'uploads/file', record: record, thumbnail: true
-        .w-full
-          .mb-4
-            - if record.for_review?
-              = link_to t('.approve'),
-                        new_admin_upload_approval_path(record),
-                        class: 'button button-red'
-              / = render 'approval_form', record: record
-            - else
-              = t('.approved_at')
-              = record.approved_at
-          .mt-4
-            = render 'deletion_form', record: record
+    .flex.border.border-gray-300.my-16.bg-gray-100
+      .w-full
+        .w-full.text-center.mb-2
+          - if record.publishable?
+            = link_to t('.publishable'),
+                      edit_admin_upload_path(record),
+                      class: 'py-1 bg-yellow-600 block w-full text-white hover:text-white hover:bg-yellow-500'
+          - else
+            .py-1.bg-green-600.block.w-full.text-white
+              = t('.published')
+
+        .flex
+          %div{ class: 'w-1/6' }
+            = render 'uploads/file', record: record, image_size: :thumbnail
+          .w-auto.px-4.pt-1
+            .flex
+              .w-full
+                .mb-4
+                  .tracking-wide.uppercase.text-red-400.text-xs= Upload.human_attribute_name(:title)
+                  = record.title
+                .mb-4
+                  .tracking-wide.uppercase.text-red-400.text-xs= Upload.human_attribute_name(:comment)
+                  = record.comment
+                - if record.published_at.present?
+                  .mb-4
+                    .tracking-wide.uppercase.text-red-400.text-xs= Upload.human_attribute_name(:published_at)
+                    = record.published_at
+        .flex
+          %div{ class: 'w-1/6' }
+          .w-auto.px-4.pb-1
+            = link_to t('general.edit'),
+                      edit_admin_upload_path(record),
+                      class: 'py-1 inline-block'
+
+            = link_to t('general.delete'),
+                      admin_upload_path(record),
+                      method: :delete,
+                      class: 'ml-6 py-1 text-gray-600'
+
 
 - else
   none

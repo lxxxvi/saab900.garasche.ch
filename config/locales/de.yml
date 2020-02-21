@@ -1,14 +1,22 @@
 de:
   activemodel:
     attributes:
-      admin/upload/approval_form:
-        title: 'Titel'
+      admin/upload_form:
+        title: 'Beschreibung'
     errors:
       models:
-        admin/upload/approval_form:
+        admin/upload_form:
           attributes:
             title:
               blank: 'darf nicht leer sein'
+  activerecord:
+    models:
+      upload: 'Beitrag'
+    attributes:
+      upload:
+        title: 'Beschreibung'
+        comment: 'Kommentar'
+        published_at: 'Publiziert am'
   errors:
     messages:
       mini_magick_processing_error: "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}"
@@ -19,24 +27,23 @@ de:
         success: 'Login erfolgreich'
         alert: 'Login fehlgeschlagen'
     uploads:
-      approvals:
-        new:
-          approve: 'Annehmen'
-          title: 'Beschreibung'
-        success: 'Beitrag angenommen'
-      deletion_form:
-        delete: 'Löschen'
-      deletions:
+      update:
+        success: 'Beitrag editiert'
+        alert: 'Ups, da hat was nicht geklappt.'
+      form:
+        publish: 'Publizieren'
+        submit: 'Editieren'
+      destroy:
         success: 'Beitrag gelöscht'
       index:
-        approve: 'Annehmen'
-        approved_at: 'Angenommen am'
         contribution:
           one: 'Beitrag'
           other: 'Beiträge'
-        ready_to_review:
-          one: 'Es steht 1 Beitrag zum prüfen bereit.'
-          other: 'Es stehen %{count} Beiträge zum prüfen bereit'
+        publishable: 'Publizierbar'
+        publishable_contributions:
+          one: 'Es gibt 1 unpublizierter Beitrag'
+          other: 'Es gibt %{count} unpublizierte Beiträge'
+        published: 'Publiziert'
         status: 'Status'
 
   footer: |
@@ -47,7 +54,10 @@ de:
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   general:
+    input_required: 'Eingabe erforderlich'
     back: 'Zurück'
+    delete: 'Löschen'
+    edit: 'Editieren'
     password: 'Passwort'
     sign_in: 'Einloggen'
     sign_out: 'Ausloggen'

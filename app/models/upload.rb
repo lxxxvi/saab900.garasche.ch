@@ -3,19 +3,21 @@ class Upload < ApplicationRecord
 
   validates :file, presence: true
 
-  scope :approved, -> { where.not(approved_at: nil) }
-  scope :for_review, -> { where(approved_at: nil) }
-  scope :ordered_chronologically, -> { order(approved_at: :desc) }
+  scope :published, -> { where.not(published_at: nil) }
+  scope :publishable, -> { where(published_at: nil) }
+  scope :ordered_chronologically, -> { order(published_at: :desc, created_at: :desc) }
 
   before_destroy :delete_file
 
-  def for_review?
-    approved_at.nil?
+  def publishable?
+    published_at.nil?
   end
 
-  def approve!
-    update(approved_at: Time.zone.now)
+  def published?
+    published_at.present?
   end
+
+
 
   def delete_file
     file.file.delete

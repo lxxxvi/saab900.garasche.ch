@@ -4,8 +4,8 @@
 
   %ul
     - records.each do |record|
-      %li.gallery-item= render 'uploads/file', record: record
+      %li.gallery-item= render 'uploads/file', record: record, image_size: :gallery
 
 - else
   .text-gray-500.text-center
-    Noch keinen Inhalt...
+    = t('.nothing_there_yet')
