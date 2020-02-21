@@ -75,3 +75,5 @@ de:
         Erlaubte Formate sind: jpg, jpeg oder png
       select_picture: 'Bild auswählen'
       submit: 'Hochladen'
+    index:
+      nothing_there_yet: "Hier gibt's noch nichts."
