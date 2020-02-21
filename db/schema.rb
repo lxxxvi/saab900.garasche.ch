@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 2020_02_03_164433) do
 
   create_table "uploads", force: :cascade do |t|
     t.string "file", null: false
+    t.string "uploads"
+    t.string "title"
     t.text "comment"
-    t.datetime "approved_at"
+    t.datetime "published_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

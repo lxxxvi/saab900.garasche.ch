@@ -1,4 +1,22 @@
 de:
+  activemodel:
+    attributes:
+      admin/upload_form:
+        title: 'Beschreibung'
+    errors:
+      models:
+        admin/upload_form:
+          attributes:
+            title:
+              blank: 'darf nicht leer sein'
+  activerecord:
+    models:
+      upload: 'Beitrag'
+    attributes:
+      upload:
+        title: 'Beschreibung'
+        comment: 'Kommentar'
+        published_at: 'Publiziert am'
   errors:
     messages:
       mini_magick_processing_error: "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}"
@@ -9,22 +27,23 @@ de:
         success: 'Login erfolgreich'
         alert: 'Login fehlgeschlagen'
     uploads:
-      approval_form:
-        approve: 'Annehmen'
-      approvals:
-        success: 'Beitrag angenommen'
-      deletion_form:
-        delete: 'Löschen'
-      deletions:
+      update:
+        success: 'Beitrag editiert'
+        alert: 'Ups, da hat was nicht geklappt.'
+      form:
+        publish: 'Publizieren'
+        submit: 'Editieren'
+      destroy:
         success: 'Beitrag gelöscht'
       index:
-        approved_at: 'Angenommen am'
         contribution:
           one: 'Beitrag'
           other: 'Beiträge'
-        ready_to_review:
-          one: 'Es steht 1 Beitrag zum prüfen bereit.'
-          other: 'Es stehen %{count} Beiträge zum prüfen bereit'
+        publishable: 'Publizierbar'
+        publishable_contributions:
+          one: 'Es gibt 1 unpublizierter Beitrag'
+          other: 'Es gibt %{count} unpublizierte Beiträge'
+        published: 'Publiziert'
         status: 'Status'
 
   footer: |
@@ -35,17 +54,26 @@ de:
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   general:
+    input_required: 'Eingabe erforderlich'
     back: 'Zurück'
+    delete: 'Löschen'
+    edit: 'Editieren'
     password: 'Passwort'
     sign_in: 'Einloggen'
     sign_out: 'Ausloggen'
   saab900:
     show:
-      upload_your_picture: 'Dein Bild hochladen'
+      upload_your_contribution: 'Lade deinen Beitrag hoch'
   uploads:
     create:
-      notice: 'Vielen Dank. Dein Bild wurde hochgeladen, wir geben es in kürze frei.'
+      notice: 'Vielen Dank. Dein Beitrag wurde hochgeladen, wir geben es in kürze frei.'
       alert: 'Irgendwas hat nicht geklappt, versuchs nochmal ;-)'
     new:
+      how_it_works: 'So funktionierts'
+      how_it_works_description: |
+        Lade dein Bild oder PDF hoch und wir schalten es innert kürze frei.
+        Erlaubte Formate sind: jpg, jpeg oder png
       select_picture: 'Bild auswählen'
       submit: 'Hochladen'
+    index:
+      nothing_there_yet: "Hier gibt's noch nichts."

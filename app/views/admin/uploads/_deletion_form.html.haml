@@ -1,2 +1,1 @@
-= form_with url: admin_upload_deletion_path(record) do
-  = submit_tag t('.delete'), class: 'button button-red-hollow'
+= link_to t('.delete'), admin_upload_path(record), method: :delete, class: 'button button-red-hollow'

@@ -1,0 +1,31 @@
+.mb-8
+  .w-full
+    = render 'uploads/file', record: form.object, image_size: :original
+    - if form.pdf?
+      = link_to form.object.file.file.original_filename
+
+= form_with model: form, method: :patch do |f|
+  .flex.mb-8
+    .w-full
+      = f.label :title, Upload.human_attribute_name(:title)
+      = f.text_field :title,
+                     class: 'w-1/2',
+                     placeholder: f.object.title_required? ? t('general.input_required') : nil
+      - if f.object.errors.include?(:title)
+        .text-red-500.text-xs
+          - f.object.errors.full_messages_for(:title).each do |e|
+            = e
+
+  .flex.mb-8
+    .w-full
+      = f.label :comment, Upload.human_attribute_name(:comment)
+      = f.text_area :comment, class: 'w-1/2'
+  .flex.mb-8
+    .w-full
+      = f.label :publish, t('.publish')
+      = f.check_box :publish
+  .flex.my-4
+    .w-full
+      = submit_tag t('.submit'), class: 'button button-red'
+
+= link_to t('general.back'), admin_uploads_path

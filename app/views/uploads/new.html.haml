@@ -1,10 +1,16 @@
-= form_with model: @upload do |f|
-  .ml-auto.mr-auto.text-center{ class: 'w-2/3' }
+.ml-auto.mr-auto.text-center
+  = form_with model: @upload do |f|
     .flex
-      .w-full= f.label :file, t('.select_picture')
+      .w-full= f.label :file, t('.select_picture'), class: 'overflow-scroll'
     .flex.my-4
       .w-full= f.file_field :file
     .flex.my-4
       .w-full= f.submit t('.submit'), class: 'button button-red'
-    .flex.mt-6
-      .w-full= link_to t('general.back'), root_path, class: 'text-sm'
+
+  .flex.mt-8
+    .w-full.text-gray-600= t('.how_it_works')
+  .flex.mb-8.mt-1
+    .w-full= t('.how_it_works_description')
+
+  .flex.mt-6
+    .w-full= link_to t('general.back'), root_path, class: 'text-sm'

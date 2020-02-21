@@ -1,3 +1,9 @@
 image:
   file: 'image.png'
   comment: 'No comment'
+
+pdf:
+  file: 'pdf.pdf'
+
+docx:
+  file: 'docx.docx'

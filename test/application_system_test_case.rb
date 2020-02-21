@@ -2,6 +2,8 @@ require 'test_helper'
 require 'capybara/rails'
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
+  include ActionDispatch::TestProcess::FixtureFile
+
   driven_by :rack_test
 
   teardown do
@@ -17,5 +19,11 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
   def sign_out
     click_on 'Ausloggen'
+  end
+
+  def upload_file(path)
+    visit new_upload_path
+    attach_file 'Bild auswählen', Rails.root.join(path)
+    click_on 'Hochladen'
   end
 end

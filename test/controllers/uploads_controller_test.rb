@@ -2,12 +2,12 @@ require 'test_helper'
 
 class UploadsControllerTest < ActionDispatch::IntegrationTest
   test 'uploads image' do
-    upload_file(fixture_file_upload('files/image.png'), 1)
+    upload_file(fixture_file_upload('files/image.png'))
     assert_success
   end
 
   test 'uploads pdf' do
-    upload_file(fixture_file_upload('files/pdf.pdf'), 1)
+    upload_file(fixture_file_upload('files/pdf.pdf'))
     assert_success
   end
 
@@ -23,16 +23,10 @@ class UploadsControllerTest < ActionDispatch::IntegrationTest
 
   private
 
-  def upload_file(file, expected_difference)
-    assert_difference -> { Upload.count }, expected_difference do
-      post uploads_path, params: { upload: { file: file } }
-    end
-  end
-
   def assert_success
     follow_redirect!
     assert_response :success
-    assert_equal 'Vielen Dank. Dein Bild wurde hochgeladen, wir geben es in kürze frei.', flash[:notice]
+    assert_equal 'Vielen Dank. Dein Beitrag wurde hochgeladen, wir geben es in kürze frei.', flash[:notice]
   end
 
   def assert_alert
