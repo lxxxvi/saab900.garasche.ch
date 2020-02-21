@@ -19,6 +19,6 @@
       - if flash.any?
         .mb-4
           - flash.each do |key, message|
-            .flash{ class: "flash-#{key}"}= message
+            .flash{ class: "flash-#{key}" }= message
 
       = yield
