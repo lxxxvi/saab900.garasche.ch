@@ -43,7 +43,7 @@ class Admin::UploadForm
   end
 
   def determine_published_at
-    return nil if !publish?
+    return nil unless publish?
 
     object.published_at || Time.zone.now
   end

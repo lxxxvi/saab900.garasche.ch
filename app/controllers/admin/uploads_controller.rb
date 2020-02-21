@@ -31,7 +31,7 @@ class Admin::UploadsController < Admin::BaseController
   private
 
   def set_upload
-    @upload ||= Upload.find(params[:id])
+    @upload = Upload.find(params[:id])
   end
 
   def admin_upload_params

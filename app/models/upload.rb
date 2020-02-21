@@ -17,8 +17,6 @@ class Upload < ApplicationRecord
     published_at.present?
   end
 
-
-
   def delete_file
     file.file.delete
   end
