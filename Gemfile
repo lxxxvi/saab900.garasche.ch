@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bugsnag', '~> 6.13'
 gem 'carrierwave-aws'
 gem 'haml-rails'
 gem 'pagy'
