@@ -2,9 +2,10 @@
 
   = raw pagy_nav(@pagy) if @pagy.pages > 1
 
-  %ul
+  %ul.text-center
     - records.each do |record|
-      %li.gallery-item= render 'uploads/file', record: record, image_size: :gallery
+      %li.gallery-item
+        = render 'uploads/file', record: record, image_size: :gallery
 
 - else
   .text-gray-500.text-center

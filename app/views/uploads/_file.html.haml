@@ -1,4 +1,5 @@
 - if record.file.content_type.start_with?('image')
   = image_tag record.file.url, class: "image-size--#{image_size}"
-- else
-  = link_to ' ', record.file.url, class: "icon--pdf image-size--#{image_size}-pdf"
+- elsif record.file.content_type == 'application/pdf'
+  .mb-4.h-48.icon--pdf{ class: "image-size--#{image_size}-pdf" }
+  = link_to record.title, record.file.url

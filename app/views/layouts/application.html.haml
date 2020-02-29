@@ -13,10 +13,11 @@
   %body{ class: 'saab900 ml-auto mr-auto' }
     .main.bg-white
       .mb-16
-        %h1.bg-red-800.text-white.text-right.pt-4.pb-2.px-4.tracking-widest.border-b-8.border-red-600.text-lg
+        %h1.bg-red-800.text-white.text-right.py-4.px-4.tracking-widest.text-xl
           Saab 900
 
-      = yield
+      .mb-16
+        = yield
 
-    %footer.footer.bg-red-200.px-4.py-6.tracking-wide.border-t-8.border-red-400.text-sm.text-red-800
+    %footer.footer.bg-red-200.px-4.py-8.tracking-wide.text-red-900
       = t('footer').html_safe
