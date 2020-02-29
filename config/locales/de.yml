@@ -47,12 +47,14 @@ de:
         status: 'Status'
 
   footer: |
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    ein pensioniertes, weiterlebendes Gefährt<br />
+    <br />
+    dieses Objekt steht auf einem pensionierten Parkplatz (privates Grundstück), der richtige Ort für ein pensioniertes Auto.<br />
+    Das Objekt wurde ausgeschlachtet und mit Erde angereichert. Jetzt wartet es auf  Pflanzen, Samen, die durch die Luft fliegen, von Vögeln fallen gelassen, vom Winde verweht werden.<br />
+    <br />
+    mit der Zeit wird es ein etwas besonderer Blumentopf mit ausschliesslich zufällig spriessenden, hoffentlich einheimischen Pflanzen sein.<br />
+    <br />
+    um den Vorschriften zu entsprechen, wird das Objekt alle 2-3 Monate um eine kurze Strecke bewegt.
   general:
     input_required: 'Eingabe erforderlich'
     back: 'Zurück'
