@@ -41,7 +41,7 @@ input[type=text], textarea {
 }
 
 .button {
-  @apply py-1 px-4 border border-gray-500 bg-white;
+  @apply py-2 px-6 border border-gray-500 bg-white rounded;
 }
 
 .button:hover {
@@ -53,7 +53,7 @@ input[type=text], textarea {
 }
 
 .button-red:hover {
-  @apply bg-red-700;
+  @apply bg-red-700 text-white;
 }
 
 .button-red-hollow {
@@ -84,6 +84,10 @@ input[type=text], textarea {
 .image-size--original-pdf {
   @apply max-w-full block;
   height: 10vh;
+}
+
+.image-size--gallery-pdf {
+  @apply bg-center;
 }
 
 .image-size--original {
