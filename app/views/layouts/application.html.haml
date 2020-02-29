@@ -20,4 +20,8 @@
         = yield
 
     %footer.footer.bg-red-200.px-4.py-8.tracking-wide.text-red-900
-      = t('footer').html_safe
+      .text
+        = t('footer').html_safe
+      .location.text-center.text-xs.mt-10
+        .icon--map.h-8.bg-center.mb-2
+        = link_to '47.3938250, 8.0445262', 'https://osm.org/go/0CeelcEIu--?node=3927147277', target: '_blank', rel: 'noopener noreferrer'
