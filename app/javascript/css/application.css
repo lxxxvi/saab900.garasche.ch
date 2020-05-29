@@ -1,5 +1,5 @@
-@tailwind base;
-@tailwind components;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
 
 * {
   @apply font-serif;
@@ -119,4 +119,4 @@ input[type=text], textarea {
   @apply border-green-500;
 }
 
-@tailwind utilities;
+@import "tailwindcss/utilities";
