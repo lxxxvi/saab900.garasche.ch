@@ -113,7 +113,7 @@ jobs:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
 
-      - name: Setup database
+      - name: Run Tests
         run: bin/github_ci test
 
   system_test:
@@ -153,6 +153,6 @@ jobs:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
 
-      - name: Setup database
+      - name: Run System Tests
         run: bin/github_ci test_system
 
