@@ -22,13 +22,15 @@ jobs:
         uses: actions/cache@v2
         id: bundler-cache
         with:
-          path: vendor/bundle
+          path: |
+            .bundle
+            vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
 
       - name: Bundle install
         if: steps.bundler-cache.outputs.cache-hit != 'true'
         run: |
-          bundle config path vendor/bundle
+          bundle config path vendor/bundle --local
           bundle install --jobs 4 --retry 3
 
   yarn_install:
@@ -111,17 +113,8 @@ jobs:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
 
-      - name: Use gems from vendor/bundle
-        run: bundle config path vendor/bundle
-
       - name: Setup database
-        run: |
-          cp config/database.yml.github-actions config/database.yml
-          bin/rails db:test:prepare
-
-      - name: bin/rails test
-        run: bin/rails test
-
+        run: bin/github_ci test
 
   system_test:
     name: Rails system tests
@@ -160,13 +153,6 @@ jobs:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
 
-      - name: Use gems from vendor/bundle
-        run: bundle config path vendor/bundle
-
       - name: Setup database
-        run: |
-          cp config/database.yml.github-actions config/database.yml
-          bin/rails db:test:prepare
-
-      - run: bin/rails test:system
+        run: bin/github_ci test_system
 
