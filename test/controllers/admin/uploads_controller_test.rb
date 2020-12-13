@@ -17,7 +17,7 @@ class Admin::UploadsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'publish upload' do
-    file = fixture_file_upload('files/image.png')
+    file = fixture_file_upload('image.png')
     post uploads_path, params: { upload: { file: file } }
 
     sign_in_admin
@@ -39,7 +39,7 @@ class Admin::UploadsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'unpublish upload' do
-    file = fixture_file_upload('files/image.png')
+    file = fixture_file_upload('image.png')
     post uploads_path, params: { upload: { file: file } }
 
     sign_in_admin

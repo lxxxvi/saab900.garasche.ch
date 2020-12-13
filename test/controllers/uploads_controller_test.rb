@@ -2,12 +2,12 @@ require 'test_helper'
 
 class UploadsControllerTest < ActionDispatch::IntegrationTest
   test 'uploads image' do
-    upload_file(fixture_file_upload('files/image.png'))
+    upload_file(fixture_file_upload('image.png'))
     assert_success
   end
 
   test 'uploads pdf' do
-    upload_file(fixture_file_upload('files/pdf.pdf'))
+    upload_file(fixture_file_upload('pdf.pdf'))
     assert_success
   end
 
@@ -17,7 +17,7 @@ class UploadsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'uploads unsupported file format' do
-    upload_file(fixture_file_upload('files/docx.docx'), 0)
+    upload_file(fixture_file_upload('docx.docx'), 0)
     assert_alert
   end
 

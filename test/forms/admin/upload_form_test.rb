@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Admin::UploadFormTest < ActionDispatch::IntegrationTest
   test 'publish an upload' do
-    upload_file(fixture_file_upload('files/image.png'))
+    upload_file(fixture_file_upload('image.png'))
     upload = Upload.last
 
     form = Admin::UploadForm.new(upload, publish: '1')
@@ -14,7 +14,7 @@ class Admin::UploadFormTest < ActionDispatch::IntegrationTest
   end
 
   test 'validate pdf' do
-    upload_file(fixture_file_upload('files/pdf.pdf'))
+    upload_file(fixture_file_upload('pdf.pdf'))
     upload = Upload.last
 
     form = Admin::UploadForm.new(upload)

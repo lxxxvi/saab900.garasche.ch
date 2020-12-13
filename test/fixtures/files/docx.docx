@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UploadsControllerTest < ActionDispatch::IntegrationTest
   test 'uploads image' do
-    image = fixture_file_upload('files/image.png')
+    image = fixture_file_upload('image.png')
 
     assert_difference -> { Upload.count }, 1 do
       post uploads_path, params: { upload: { file: image } }
@@ -14,7 +14,7 @@ class UploadsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'uploads pdf' do
-    image = fixture_file_upload('files/pdf.pdf')
+    image = fixture_file_upload('pdf.pdf')
 
     assert_difference -> { Upload.count }, 1 do
       post uploads_path, params: { upload: { file: image } }
@@ -36,7 +36,7 @@ class UploadsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'uploads unsupported file format' do
-    image = fixture_file_upload('files/pdf.pdf')
+    image = fixture_file_upload('pdf.pdf')
 
     assert_difference -> { Upload.count }, 1 do
       post uploads_path, params: { upload: { file: image } }
