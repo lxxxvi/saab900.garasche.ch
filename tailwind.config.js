@@ -1,7 +1,17 @@
 module.exports = {
-  theme: {
-    extend: {}
+  purge: {
+    enabled: false,
+    content: [
+      'app/**/*.haml',
+      'app/**/*.css',
+    ]
   },
-  variants: {},
-  plugins: []
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
 }

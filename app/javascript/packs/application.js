@@ -14,6 +14,7 @@ require("@rails/activestorage").start()
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import '../css/application.css'
+import '../css/app-base.css'
+import '../css/app-components.css'
+import '../css/app-utilities.css'
 
-import "controllers"

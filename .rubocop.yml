@@ -35,6 +35,9 @@ Lint/ConstantDefinitionInBlock:
 Lint/DeprecatedOpenSSLConstant:
   Enabled: true
 
+Lint/DuplicateBranch:
+  Enabled: true
+
 Lint/DuplicateElsifCondition:
   Enabled: true
 
@@ -48,6 +51,9 @@ Lint/DuplicateRescueException:
   Enabled: true
 
 Lint/EmptyBlock:
+  Enabled: true
+
+Lint/EmptyClass:
   Enabled: true
 
 Lint/EmptyConditionalBody:
@@ -69,6 +75,9 @@ Lint/MissingSuper:
   Enabled: true
 
 Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+
+Lint/NoReturnInBeginEndBlocks:
   Enabled: true
 
 Lint/OutOfRangeRegexpRef:
@@ -95,6 +104,9 @@ Lint/TopLevelReturnWithArgument:
 Lint/TrailingCommaInAttributeDeclaration:
   Enabled: true
 
+Lint/UnexpectedBlockArity:
+  Enabled: true
+
 Lint/UnmodifiedReduceAccumulator:
   Enabled: true
 
@@ -111,6 +123,9 @@ Rails/ActiveRecordCallbacksOrder:
   Enabled: true
 
 Rails/AfterCommitOverride:
+  Enabled: true
+
+Rails/AttributeDefaultBlockValue:
   Enabled: true
 
 Rails/FindById:
@@ -146,6 +161,9 @@ Rails/ShortI18n:
 Rails/SquishedSQLHeredocs:
   Enabled: true
 
+Rails/WhereEquals:
+  Enabled: true
+
 Rails/WhereExists:
   Enabled: true
 
@@ -171,6 +189,9 @@ Style/ClassAndModuleChildren:
   Enabled: false
 
 Style/ClassEqualityComparison:
+  Enabled: true
+
+Style/CollectionCompact:
   Enabled: true
 
 Style/CombinableLoops:
@@ -212,7 +233,16 @@ Style/HashTransformValues:
 Style/KeywordParametersOrder:
   Enabled: true
 
+Style/NegatedIfElseCondition:
+  Enabled: true
+
+Style/NilLambda:
+  Enabled: true
+
 Style/OptionalBooleanParameter:
+  Enabled: true
+
+Style/RedundantArgument:
   Enabled: true
 
 Style/RedundantAssignment:

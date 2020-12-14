@@ -1,6 +1,3 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-
 * {
   @apply font-serif;
 }
@@ -118,5 +115,3 @@ input[type=text], textarea {
 .flash-success {
   @apply border-green-500;
 }
-
-@import "tailwindcss/utilities";
