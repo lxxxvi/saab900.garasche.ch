@@ -26,10 +26,19 @@ Layout/LineLength:
 Layout/SpaceAroundMethodCallOperator:
   Enabled: true
 
+Layout/SpaceBeforeBrackets:
+  Enabled: true
+
+Lint/AmbiguousAssignment:
+  Enabled: true
+
 Lint/BinaryOperatorWithIdenticalOperands:
   Enabled: true
 
 Lint/ConstantDefinitionInBlock:
+  Enabled: true
+
+Lint/DeprecatedConstants:
   Enabled: true
 
 Lint/DeprecatedOpenSSLConstant:
@@ -71,6 +80,9 @@ Lint/HashCompareByIdentity:
 Lint/IdentityComparison:
   Enabled: true
 
+Lint/LambdaWithoutLiteralBlock:
+  Enabled: true
+
 Lint/MissingSuper:
   Enabled: true
 
@@ -80,10 +92,19 @@ Lint/MixedRegexpCaptureTypes:
 Lint/NoReturnInBeginEndBlocks:
   Enabled: true
 
+Lint/NumberedParameterAssignment:
+  Enabled: true
+
+Lint/OrAssignmentToConstant:
+  Enabled: true
+
 Lint/OutOfRangeRegexpRef:
   Enabled: true
 
 Lint/RaiseException:
+  Enabled: true
+
+Lint/RedundantDirGlobSort:
   Enabled: true
 
 Lint/RedundantSafeNavigation:
@@ -95,6 +116,9 @@ Lint/SelfAssignment:
 Lint/StructNewOverride:
   Enabled: true
 
+Lint/SymbolConversion:
+  Enabled: true
+
 Lint/ToEnumArguments:
   Enabled: true
 
@@ -102,6 +126,9 @@ Lint/TopLevelReturnWithArgument:
   Enabled: true
 
 Lint/TrailingCommaInAttributeDeclaration:
+  Enabled: true
+
+Lint/TripleQuotes:
   Enabled: true
 
 Lint/UnexpectedBlockArity:
@@ -203,6 +230,9 @@ Style/DocumentDynamicEvalDefinition:
 Style/Documentation:
   Enabled: false
 
+Style/EndlessMethod:
+  Enabled: true
+
 Style/ExplicitBlockArgument:
   Enabled: true
 
@@ -221,6 +251,9 @@ Style/HashAsLastArrayItem:
 Style/HashEachMethods:
   Enabled: true
 
+Style/HashExcept:
+  Enabled: true
+
 Style/HashLikeCase:
   Enabled: true
 
@@ -228,6 +261,9 @@ Style/HashTransformKeys:
   Enabled: true
 
 Style/HashTransformValues:
+  Enabled: true
+
+Style/IfWithBooleanLiteralBranches:
   Enabled: true
 
 Style/KeywordParametersOrder:
