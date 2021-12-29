@@ -37,11 +37,6 @@ jobs:
       - run: npm install -g yarn
       - run: yarn install
 
-      - name: Create master.key
-        env:
-          RAILS_MASTER_KEY_FOR_TEST: ${{ secrets.RAILS_MASTER_KEY_FOR_TEST }}
-        run: echo "${RAILS_MASTER_KEY_FOR_TEST}" > ./config/master.key
-
       - name: Setup database
         run: |
           cp ./.github/workflows/templates/database.yml.github-actions config/database.yml
