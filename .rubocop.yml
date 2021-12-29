@@ -17,6 +17,9 @@ Rails:
 Gemspec/DateAssignment:
   Enabled: true
 
+Gemspec/RequireMFA:
+  Enabled: true
+
 Layout/BeginEndAlignment:
   Enabled: true
 
@@ -36,6 +39,9 @@ Layout/SpaceBeforeBrackets:
   Enabled: true
 
 Lint/AmbiguousAssignment:
+  Enabled: true
+
+Lint/AmbiguousOperatorPrecedence:
   Enabled: true
 
 Lint/AmbiguousRange:
@@ -92,6 +98,9 @@ Lint/HashCompareByIdentity:
 Lint/IdentityComparison:
   Enabled: true
 
+Lint/IncompatibleIoSelectWithFiberScheduler:
+  Enabled: true
+
 Lint/LambdaWithoutLiteralBlock:
   Enabled: true
 
@@ -120,6 +129,9 @@ Lint/RedundantDirGlobSort:
   Enabled: true
 
 Lint/RedundantSafeNavigation:
+  Enabled: true
+
+Lint/RequireRelativeSelfPath:
   Enabled: true
 
 Lint/SelfAssignment:
@@ -155,7 +167,13 @@ Lint/UnreachableLoop:
 Lint/UselessMethodDefinition:
   Enabled: true
 
+Lint/UselessRuby2Keywords:
+  Enabled: true
+
 Lint/UselessTimes:
+  Enabled: true
+
+Naming/BlockForwarding:
   Enabled: true
 
 Naming/InclusiveLanguage:
@@ -171,6 +189,12 @@ Rails/AfterCommitOverride:
   Enabled: true
 
 Rails/AttributeDefaultBlockValue:
+  Enabled: true
+
+Rails/CompactBlank:
+  Enabled: true
+
+Rails/DurationArithmetic:
   Enabled: true
 
 Rails/EagerEvaluationLogMessage:
@@ -203,10 +227,19 @@ Rails/Pluck:
 Rails/PluckInWhere:
   Enabled: true
 
+Rails/RedundantPresenceValidationOnBelongsTo:
+  Enabled: true
+
+Rails/RedundantTravelBack:
+  Enabled: true
+
 Rails/RenderInline:
   Enabled: true
 
 Rails/RenderPlainText:
+  Enabled: true
+
+Rails/RootJoinChain:
   Enabled: true
 
 Rails/ShortI18n:
@@ -228,6 +261,9 @@ Rails/WhereExists:
   Enabled: true
 
 Rails/WhereNot:
+  Enabled: true
+
+Security/IoMethods:
   Enabled: true
 
 Style/AccessorGrouping:
@@ -272,6 +308,12 @@ Style/ExplicitBlockArgument:
 Style/ExponentialNotation:
   Enabled: true
 
+Style/FileRead:
+  Enabled: true
+
+Style/FileWrite:
+  Enabled: true
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
@@ -308,6 +350,9 @@ Style/InPatternThen:
 Style/KeywordParametersOrder:
   Enabled: true
 
+Style/MapToHash:
+  Enabled: true
+
 Style/MultilineInPatternThen:
   Enabled: true
 
@@ -315,6 +360,15 @@ Style/NegatedIfElseCondition:
   Enabled: true
 
 Style/NilLambda:
+  Enabled: true
+
+Style/NumberedParameters:
+  Enabled: true
+
+Style/NumberedParametersLimit:
+  Enabled: true
+
+Style/OpenStructUse:
   Enabled: true
 
 Style/OptionalBooleanParameter:
@@ -345,6 +399,9 @@ Style/RedundantSelfAssignment:
   Enabled: true
 
 Style/RedundantSelfAssignmentBranch:
+  Enabled: true
+
+Style/SelectByRegexp:
   Enabled: true
 
 Style/SingleArgumentDig:

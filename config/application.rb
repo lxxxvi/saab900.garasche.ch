@@ -12,7 +12,7 @@ require 'action_controller/railtie'
 # require "action_text/engine"
 require 'action_view/railtie'
 # require "action_cable/engine"
-# require "sprockets/railtie"
+require 'sprockets/railtie'
 require 'rails/test_unit/railtie'
 
 # Require the gems listed in Gemfile, including any gems
@@ -23,7 +23,7 @@ module Saab900GarascheCh
   class Application < Rails::Application
     config.i18n.available_locales = :de
     config.i18n.default_locale = :de
-    config.load_defaults 6.0
+    config.load_defaults 7.0
     config.action_view.form_with_generates_remote_forms = false
     config.admin_password = ENV['SAAB900_ADMIN_PASSWORD']
     config.carrierwave_storage = :file # production and development_aws use :aws

@@ -58,6 +58,7 @@ de:
   general:
     input_required: 'Eingabe erforderlich'
     back: 'Zurück'
+    confirm: 'Bestätigen'
     delete: 'Löschen'
     edit: 'Editieren'
     password: 'Passwort'
