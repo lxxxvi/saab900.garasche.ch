@@ -5,15 +5,15 @@
     %title Saab 900 ADMIN
     = csrf_meta_tags
     = csp_meta_tag
-    = javascript_pack_tag 'application'
-    = stylesheet_pack_tag 'application'
+    = stylesheet_link_tag 'application', "data-turbo-track": "reload"
+    = javascript_include_tag 'application', "data-turbo-track": "reload", defer: true
   %body
     .m-4
       - if admin_signed_in?
-        = link_to t('general.sign_out'),
-                  admin_session_path,
-                  method: :delete,
-                  class: 'text-xs float-right'
+        = button_to t('general.sign_out'),
+                    admin_session_path,
+                    method: :delete,
+                    class: 'text-xs float-right'
       .text-xl.text-red-800.border-b.mb-8 Saab 900 Admin
 
       - if flash.any?

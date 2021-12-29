@@ -34,3 +34,6 @@ yarn-debug.log*
 /coverage
 .DS_Store
 /vendor
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
