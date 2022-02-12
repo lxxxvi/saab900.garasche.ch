@@ -10,7 +10,7 @@ end
 module FileUploadHelper
   def upload_file(file, expected_difference = 1)
     assert_difference -> { Upload.count }, expected_difference do
-      post uploads_path, params: { upload: { file: file } }
+      post uploads_path, params: { upload: { file: } }
     end
   end
 end
