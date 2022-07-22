@@ -25,7 +25,7 @@ module Saab900GarascheCh
     config.i18n.default_locale = :de
     config.load_defaults 7.0
     config.action_view.form_with_generates_remote_forms = false
-    config.admin_password = ENV['SAAB900_ADMIN_PASSWORD']
+    config.admin_password = ENV.fetch('SAAB900_ADMIN_PASSWORD')
     config.carrierwave_storage = :file # production and development_aws use :aws
   end
 end

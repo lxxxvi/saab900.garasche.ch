@@ -3,6 +3,7 @@ env:
   NODE_VERSION: 12
   RAILS_ENV: test
   POSTGRES_PASSWORD: "postgres"
+  SAAB900_ADMIN_PASSWORD: "admin"
 
 name: Continuous Integration
 on: [pull_request]
@@ -47,4 +48,3 @@ jobs:
 
       - name: bin/test
         run: bin/test
-
