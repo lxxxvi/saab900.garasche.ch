@@ -74,6 +74,9 @@ Lint/DuplicateBranch:
 Lint/DuplicateElsifCondition:
   Enabled: true
 
+Lint/DuplicateMagicComment:
+  Enabled: true
+
 Lint/DuplicateRegexpCharacterClassElement:
   Enabled: true
 
@@ -197,10 +200,19 @@ Naming/BlockForwarding:
 Naming/InclusiveLanguage:
   Enabled: true
 
+Rails/ActionControllerFlashBeforeRender:
+  Enabled: true
+
 Rails/ActionControllerTestCase:
   Enabled: true
 
+Rails/ActionOrder:
+  Enabled: true
+
 Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+
+Rails/ActiveSupportOnLoad:
   Enabled: true
 
 Rails/AddColumnIndex:
@@ -239,6 +251,9 @@ Rails/ExpandedDateRange:
 Rails/FindById:
   Enabled: true
 
+Rails/FreezeTime:
+  Enabled: true
+
 Rails/I18nLazyLookup:
   Enabled: true
 
@@ -246,6 +261,9 @@ Rails/I18nLocaleAssignment:
   Enabled: true
 
 Rails/I18nLocaleTexts:
+  Enabled: true
+
+Rails/IgnoredColumnsAssignment:
   Enabled: true
 
 Rails/Inquiry:
@@ -284,6 +302,9 @@ Rails/RenderPlainText:
 Rails/RootJoinChain:
   Enabled: true
 
+Rails/RootPathnameMethods:
+  Enabled: true
+
 Rails/RootPublicPath:
   Enabled: true
 
@@ -302,6 +323,12 @@ Rails/TimeZoneAssignment:
 Rails/ToFormattedS:
   Enabled: true
 
+Rails/ToSWithArgument:
+  Enabled: true
+
+Rails/TopLevelHashWithIndifferentAccess:
+  Enabled: true
+
 Rails/TransactionExitStatement:
   Enabled: true
 
@@ -314,7 +341,13 @@ Rails/WhereEquals:
 Rails/WhereExists:
   Enabled: true
 
+Rails/WhereMissing:
+  Enabled: true
+
 Rails/WhereNot:
+  Enabled: true
+
+Rails/WhereNotWithMultipleConditions:
   Enabled: true
 
 Security/CompoundHash:
@@ -416,6 +449,9 @@ Style/InPatternThen:
 Style/KeywordParametersOrder:
   Enabled: true
 
+Style/MagicCommentFormat:
+  Enabled: true
+
 Style/MapCompactWithConditionalBlock:
   Enabled: true
 
@@ -446,6 +482,9 @@ Style/ObjectThen:
 Style/OpenStructUse:
   Enabled: true
 
+Style/OperatorMethodCall:
+  Enabled: true
+
 Style/OptionalBooleanParameter:
   Enabled: true
 
@@ -456,6 +495,9 @@ Style/RedundantArgument:
   Enabled: true
 
 Style/RedundantAssignment:
+  Enabled: true
+
+Style/RedundantEach:
   Enabled: true
 
 Style/RedundantFetchBlock:
@@ -477,6 +519,9 @@ Style/RedundantSelfAssignment:
   Enabled: true
 
 Style/RedundantSelfAssignmentBranch:
+  Enabled: true
+
+Style/RedundantStringEscape:
   Enabled: true
 
 Style/SelectByRegexp:
