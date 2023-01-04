@@ -10,20 +10,19 @@
     = csp_meta_tag
     = stylesheet_link_tag "tailwind", 'application', "data-turbo-track": "reload"
     = javascript_importmap_tags
-  %body{ class: 'saab900 ml-auto mr-auto' }
-    .absolute.w-full.h-full.bg-red-400
+  %body
+    .saab900
+      %main.bg-white
+        .mb-16
+          %h1.bg-red-800.text-white.text-right.py-4.px-4.tracking-widest.text-xl
+            Saab 900
 
-    .main.bg-white
-      .mb-16
-        %h1.bg-red-800.text-white.text-right.py-4.px-4.tracking-widest.text-xl
-          Saab 900
+        .mb-16
+          = yield
 
-      .mb-16
-        = yield
-
-    %footer.footer.bg-red-200.px-4.py-8.tracking-wide.text-red-900
-      .text
-        = t('footer').html_safe
-      .location.text-center.text-xs.mt-10
-        .icon--map.h-8.bg-center.mb-2
-        = link_to '47.3938250, 8.0445262', 'https://osm.org/go/0CeelcEIu--?node=3927147277', target: '_blank', rel: 'noopener noreferrer'
+      %footer.footer.bg-red-200.px-4.py-8.tracking-wide.text-red-900
+        .text
+          = t('footer').html_safe
+        .location.text-center.text-xs.mt-10
+          .icon--map.h-8.bg-center.mb-2
+          = link_to '47.3938250, 8.0445262', 'https://osm.org/go/0CeelcEIu--?node=3927147277', target: '_blank', rel: 'noopener noreferrer'
