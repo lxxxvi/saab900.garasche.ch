@@ -1,7 +1,7 @@
 class Admin::UploadForm
   include ActiveModel::Model
 
-  PDF_FILE_EXTENSION = '.pdf'.freeze
+  PDF_FILE_EXTENSION = ".pdf".freeze
 
   delegate :persisted?, :new_record?, :to_param, :publishable?, to: :object
   attr_reader :object, :params, :file, :title, :comment, :publish
@@ -25,7 +25,7 @@ class Admin::UploadForm
   end
 
   def model_name
-    ActiveModel::Name.new(self, nil, 'Admin::Upload')
+    ActiveModel::Name.new(self, nil, "Admin::Upload")
   end
 
   def title_required?
@@ -39,7 +39,7 @@ class Admin::UploadForm
   private
 
   def publish?
-    publish == '1'
+    publish == "1"
   end
 
   def determine_published_at
