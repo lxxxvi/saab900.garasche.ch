@@ -117,8 +117,6 @@ GEM
       railties (>= 6.0.0)
     date (3.3.3)
     debug (1.7.1)
-      irb (>= 1.5.0)
-      reline (>= 0.3.1)
     erubi (1.12.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -137,9 +135,6 @@ GEM
     image_processing (1.12.2)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
-    io-console (0.6.0)
-    irb (1.6.2)
-      reline (>= 0.3.0)
     jmespath (1.6.2)
     jsbundling-rails (1.1.1)
       railties (>= 6.0.0)
@@ -157,6 +152,7 @@ GEM
     method_source (1.0.0)
     mini_magick (4.12.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.1)
     minitest (5.17.0)
     msgpack (1.6.0)
     net-imap (0.3.4)
@@ -169,9 +165,8 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.13.10-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.10-x86_64-linux)
+    nokogiri (1.13.10)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     pagy (6.0.0)
     parallel (1.22.1)
@@ -214,8 +209,6 @@ GEM
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.6.1)
-    reline (0.3.2)
-      io-console (~> 0.5)
     rexml (3.2.5)
     rubocop (1.42.0)
       json (~> 2.3)
@@ -282,6 +275,7 @@ GEM
 PLATFORMS
   arm64-darwin-20
   arm64-darwin-21
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -306,8 +300,5 @@ DEPENDENCIES
   web-console
   webdrivers
 
-RUBY VERSION
-   ruby 3.1.1p18
-
 BUNDLED WITH
-   2.3.7
+   2.4.2
