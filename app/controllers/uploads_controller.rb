@@ -7,10 +7,10 @@ class UploadsController < ApplicationController
     @upload = Upload.new(upload_params)
 
     if @upload.save
-      flash[:notice] = t('.notice')
+      flash[:notice] = t(".notice")
       redirect_to root_path
     else
-      flash[:alert] = t('.alert')
+      flash[:alert] = t(".alert")
       render :new
     end
   end

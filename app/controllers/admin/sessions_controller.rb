@@ -7,10 +7,10 @@ class Admin::SessionsController < Admin::BaseController
   def create
     if password_correct?
       session[:admin_signed_in] = true
-      flash[:success] = t('.success')
+      flash[:success] = t(".success")
       redirect_to admin_root_path
     else
-      flash.now[:alert] = t('.alert')
+      flash.now[:alert] = t(".alert")
       render :new
     end
   end

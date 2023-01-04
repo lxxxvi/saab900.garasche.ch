@@ -14,17 +14,17 @@ class Admin::UploadsController < Admin::BaseController
     @upload_form = Admin::UploadForm.new(@upload, admin_upload_params)
 
     if @upload_form.save
-      flash[:success] = t('.success')
+      flash[:success] = t(".success")
       redirect_to admin_uploads_path
     else
-      flash.now[:alert] = t('.alert')
+      flash.now[:alert] = t(".alert")
       render :edit
     end
   end
 
   def destroy
     @upload.destroy!
-    flash[:success] = t('.success')
+    flash[:success] = t(".success")
     redirect_to admin_uploads_path
   end
 

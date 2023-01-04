@@ -1,23 +1,23 @@
-require 'test_helper'
+require "test_helper"
 
 class Admin::UploadsControllerTest < ActionDispatch::IntegrationTest
-  test 'get index' do
+  test "get index" do
     sign_in_admin
 
     get admin_uploads_path
     assert_response :success
   end
 
-  test 'cannot get index without login' do
+  test "cannot get index without login" do
     get admin_uploads_path
     follow_redirect!
     assert_response :success
 
-    assert_equal 'Bitte zuerst einloggen', flash[:notice]
+    assert_equal "Bitte zuerst einloggen", flash[:notice]
   end
 
-  test 'publish upload' do
-    file = fixture_file_upload('image.png')
+  test "publish upload" do
+    file = fixture_file_upload("image.png")
     post uploads_path, params: { upload: { file: } }
 
     sign_in_admin
@@ -28,18 +28,18 @@ class Admin::UploadsControllerTest < ActionDispatch::IntegrationTest
       patch admin_upload_path(last_upload),
             params: {
               admin_upload: {
-                publish: '1'
+                publish: "1"
               }
             }
     end
 
     follow_redirect!
     assert_response :success
-    assert_equal 'Beitrag editiert', flash[:success]
+    assert_equal "Beitrag editiert", flash[:success]
   end
 
-  test 'unpublish upload' do
-    file = fixture_file_upload('image.png')
+  test "unpublish upload" do
+    file = fixture_file_upload("image.png")
     post uploads_path, params: { upload: { file: } }
 
     sign_in_admin
@@ -51,17 +51,17 @@ class Admin::UploadsControllerTest < ActionDispatch::IntegrationTest
       patch admin_upload_path(last_upload),
             params: {
               admin_upload: {
-                publish: '0'
+                publish: "0"
               }
             }
     end
 
     follow_redirect!
     assert_response :success
-    assert_equal 'Beitrag editiert', flash[:success]
+    assert_equal "Beitrag editiert", flash[:success]
   end
 
-  test 'destroy' do
+  test "destroy" do
     sign_in_admin
 
     assert_difference -> { Upload.count }, -1 do
@@ -70,6 +70,6 @@ class Admin::UploadsControllerTest < ActionDispatch::IntegrationTest
 
     follow_redirect!
     assert_response :success
-    assert_equal 'Beitrag gelöscht', flash[:success]
+    assert_equal "Beitrag gelöscht", flash[:success]
   end
 end
