@@ -1,5 +1,4 @@
 env:
-  RUBY_VERSION: 3.1
   NODE_VERSION: 12
   RAILS_ENV: test
   POSTGRES_PASSWORD: "postgres"
@@ -26,10 +25,12 @@ jobs:
           - 5432:5432
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
+
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
