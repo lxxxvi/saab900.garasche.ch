@@ -6,15 +6,15 @@ ruby '3.2.0'
 gem 'bootsnap', require: false
 gem 'bugsnag'
 gem 'carrierwave-aws'
-gem 'cssbundling-rails'
 gem 'haml-rails'
-gem 'jsbundling-rails'
+gem 'importmap-rails'
 gem 'pagy'
 gem 'pg', '>= 0.18'
+gem 'propshaft'
 gem 'puma'
 gem 'rails'
-gem 'sprockets-rails'
 gem 'stimulus-rails'
+gem 'tailwindcss-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
