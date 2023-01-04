@@ -6,20 +6,13 @@
   @apply font-serif;
 }
 
-body.saab900 {
-  @apply shadow-2xl max-w-screen-sm;
-}
-
-html.saab900 {
-  @apply h-full;
-}
-
-body.saab900 {
-  @apply h-full bg-gradient-to-br from-red-100 to-red-300;
+/*body.saab900 {
+  @apply shadow-2xl max-w-screen-sm bg-green-400;
+  @apply h-screen bg-gradient-to-br from-red-100 to-red-300 static;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 0 1fr auto;
 }
-
+*/
 a {
   @apply text-red-700;
 }
