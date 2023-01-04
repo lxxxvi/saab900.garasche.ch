@@ -365,6 +365,9 @@ Style/ArgumentsForwarding:
 Style/ArrayCoercion:
   Enabled: true
 
+Style/ArrayIntersect:
+  Enabled: true
+
 Style/BisectedAttrAccessor:
   Enabled: true
 
@@ -381,6 +384,9 @@ Style/CollectionCompact:
   Enabled: true
 
 Style/CombinableLoops:
+  Enabled: true
+
+Style/ConcatArrayLiterals:
   Enabled: true
 
 Style/DocumentDynamicEvalDefinition:
@@ -458,6 +464,12 @@ Style/MapCompactWithConditionalBlock:
 Style/MapToHash:
   Enabled: true
 
+Style/MapToSet:
+  Enabled: true
+
+Style/MinMaxComparison:
+  Enabled: true
+
 Style/MultilineInPatternThen:
   Enabled: true
 
@@ -495,6 +507,12 @@ Style/RedundantArgument:
   Enabled: true
 
 Style/RedundantAssignment:
+  Enabled: true
+
+Style/RedundantConstantBase:
+  Enabled: true
+
+Style/RedundantDoubleSplatHashBraces:
   Enabled: true
 
 Style/RedundantEach:
@@ -543,4 +561,7 @@ Style/StringConcatenation:
   Enabled: true
 
 Style/SwapValues:
+  Enabled: true
+
+Style/YodaExpression:
   Enabled: true
