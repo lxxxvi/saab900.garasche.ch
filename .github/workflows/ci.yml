@@ -1,6 +1,5 @@
 env:
   RAILS_ENV: test
-  POSTGRES_PASSWORD: "postgres"
   SAAB900_ADMIN_PASSWORD: "admin"
 
 name: Continuous Integration
@@ -14,20 +13,13 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:latest
-        env:
-          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
-
     steps:
+      - name: Start PostgreSQL
+        run: |
+          sudo sed -E -i 's|^(local *all *postgres *)peer$|\1trust|' $(find /etc/postgresql/ -name "pg_hba.conf" | head -1)
+          sudo systemctl start postgresql.service
+          pg_isready
+
       - uses: actions/checkout@v3
 
       - uses: ruby/setup-ruby@v1
