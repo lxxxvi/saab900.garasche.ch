@@ -1,7 +1,6 @@
 env:
   RAILS_ENV: test
   SAAB900_ADMIN_PASSWORD: "admin"
-  PGPASSWORD: postgres
 
 name: Continuous Integration
 on:
