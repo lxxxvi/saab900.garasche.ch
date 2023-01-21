@@ -36,12 +36,3 @@ jobs:
 
       - name: bin/test
         run: bin/test
-
-      # Enable this step if you need to debug stuff on CI.
-      - name: Setup tmate session
-        if: ${{ failure() }}
-        uses: mxschmitt/action-tmate@v3
-        timeout-minutes: 10
-        with:
-          sudo: true
-          limit-access-to-actor: true
