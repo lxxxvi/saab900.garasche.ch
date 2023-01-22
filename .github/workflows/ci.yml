@@ -18,7 +18,7 @@ jobs:
         run: |
           sudo systemctl start postgresql.service
           pg_isready
-          sudo -u postgres createuser -s -i -d -r -l -w runner;
+          sudo -u postgres createuser -s -d -r -w runner
 
       - uses: actions/checkout@v3
 
