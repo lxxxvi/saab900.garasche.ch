@@ -16,9 +16,11 @@ jobs:
     steps:
       - name: Start PostgreSQL
         run: |
-          sudo sed -E -i 's|^(local *all *postgres *)peer$|\1trust|' $(find /etc/postgresql/ -name "pg_hba.conf" | head -1)
           sudo systemctl start postgresql.service
           pg_isready
+          sudo -u postgres createuser -s -i -d -r -l -w runner;
+          sudo -u postgres psql -c "ALTER ROLE runner WITH PASSWORD 'correct-battery-horse-staple';"
+
 
       - uses: actions/checkout@v3
 
