@@ -1,6 +1,7 @@
 ---
 
 require:
+- rubocop-capybara
 - rubocop-rails
 
 AllCops:
@@ -14,7 +15,25 @@ AllCops:
 Rails:
   Enabled: true
 
+Capybara/MatchStyle:
+  Enabled: true
+
+Capybara/NegationMatcher:
+  Enabled: true
+
+Capybara/SpecificActions:
+  Enabled: true
+
+Capybara/SpecificFinders:
+  Enabled: true
+
+Capybara/SpecificMatcher:
+  Enabled: true
+
 Gemspec/DeprecatedAttributeAssignment:
+  Enabled: true
+
+Gemspec/DevelopmentDependencies:
   Enabled: true
 
 Gemspec/RequireMFA:
@@ -75,6 +94,9 @@ Lint/DuplicateElsifCondition:
   Enabled: true
 
 Lint/DuplicateMagicComment:
+  Enabled: true
+
+Lint/DuplicateMatchPattern:
   Enabled: true
 
 Lint/DuplicateRegexpCharacterClassElement:
@@ -197,6 +219,9 @@ Lint/UselessRuby2Keywords:
 Lint/UselessTimes:
   Enabled: true
 
+Metrics/CollectionLiteralLength:
+  Enabled: true
+
 Naming/BlockForwarding:
   Enabled: true
 
@@ -302,6 +327,9 @@ Rails/RenderInline:
 Rails/RenderPlainText:
   Enabled: true
 
+Rails/ResponseParsedBody:
+  Enabled: true
+
 Rails/RootJoinChain:
   Enabled: true
 
@@ -318,6 +346,9 @@ Rails/SquishedSQLHeredocs:
   Enabled: true
 
 Rails/StripHeredoc:
+  Enabled: true
+
+Rails/ThreeStateBooleanColumn:
   Enabled: true
 
 Rails/TimeZoneAssignment:
@@ -389,7 +420,16 @@ Style/CollectionCompact:
 Style/CombinableLoops:
   Enabled: true
 
+Style/ComparableClamp:
+  Enabled: true
+
 Style/ConcatArrayLiterals:
+  Enabled: true
+
+Style/DataInheritance:
+  Enabled: true
+
+Style/DirEmpty:
   Enabled: true
 
 Style/DocumentDynamicEvalDefinition:
@@ -407,6 +447,9 @@ Style/EndlessMethod:
 Style/EnvHome:
   Enabled: true
 
+Style/ExactRegexpMatch:
+  Enabled: true
+
 Style/ExplicitBlockArgument:
   Enabled: true
 
@@ -414,6 +457,9 @@ Style/ExponentialNotation:
   Enabled: true
 
 Style/FetchEnvVar:
+  Enabled: true
+
+Style/FileEmpty:
   Enabled: true
 
 Style/FileRead:
@@ -527,7 +573,13 @@ Style/RedundantFetchBlock:
 Style/RedundantFileExtensionInRequire:
   Enabled: true
 
+Style/RedundantHeredocDelimiterQuotes:
+  Enabled: true
+
 Style/RedundantInitialize:
+  Enabled: true
+
+Style/RedundantLineContinuation:
   Enabled: true
 
 Style/RedundantRegexpCharacterClass:
