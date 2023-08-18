@@ -80,3 +80,23 @@ de:
       submit: 'Hochladen'
     index:
       nothing_there_yet: "Hier gibt's noch nichts."
+
+  pagy:
+
+    item_name:
+      one: "Element"
+      other: "Elemente"
+
+    nav:
+      prev: "Vorherige"         # customized
+      next: "Nächste"         # customized
+      gap: "&hellip;"
+
+    info:
+      no_items: "0 of 0"                            # customized
+      single_page: "%{count} of %{count}"           # customized
+      multiple_pages: "%{from}-%{to} of %{count}"   # customized
+
+    combo_nav_js: "<label>Page %{page_input} of %{pages}</label>"
+
+    items_selector_js: "<label>Show %{items_input} %{item_name} per page</label>"
