@@ -115,3 +115,33 @@ input[type=text], textarea {
 .flash-success {
   @apply border-green-500;
 }
+
+/* pagy */
+
+.pagy-nav.pagination {
+  @apply isolate inline-flex -space-x-px rounded shadow-sm;
+}
+
+.page.next a {
+  @apply relative inline-flex items-center rounded-r border border-gray-300 bg-white py-1 px-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
+}
+
+.page.prev a {
+  @apply relative inline-flex items-center rounded-l border border-gray-300 bg-white py-1 px-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
+}
+
+.page.next.disabled {
+  @apply relative inline-flex items-center rounded-r border border-gray-300 bg-slate-100 py-1 px-4 text-sm font-medium text-gray-500  focus:z-20;
+}
+
+.page.prev.disabled {
+  @apply relative inline-flex items-center rounded-l border border-gray-300 bg-slate-100 py-1 px-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
+}
+
+.page a, .page.gap {
+  @apply bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center border px-4 py-1 text-sm font-medium focus:z-20;
+}
+
+.page.active {
+  @apply z-10 border-red-700 bg-red-50 text-red-700 relative inline-flex items-center border px-4 py-1 text-sm font-medium focus:z-20;
+}
