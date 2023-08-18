@@ -1,11 +1,16 @@
 - if records.any?
 
-  = raw pagy_nav(@pagy) if @pagy.pages > 1
+  .flex.justify-center
+    = raw pagy_nav(@pagy) if @pagy.pages > 1
 
   %ul.text-center
     - records.each do |record|
       %li.gallery-item
         = render 'uploads/file', record: record, image_size: :gallery
+
+  .flex.justify-center
+    = raw pagy_nav(@pagy) if @pagy.pages > 1
+
 
 - else
   .text-gray-500.text-center
