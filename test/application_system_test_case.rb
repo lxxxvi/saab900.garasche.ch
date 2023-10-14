@@ -13,17 +13,17 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   def sign_in_admin
     visit admin_root_path
     fill_in "Passwort", with: "admin"
-    click_on "Einloggen"
+    click_button "Einloggen"
     assert_selector "h1", text: "Beiträge"
   end
 
   def sign_out
-    click_on "Ausloggen"
+    click_button "Ausloggen"
   end
 
   def upload_file(path)
     visit new_upload_path
     attach_file "Bild auswählen", Rails.root.join(path)
-    click_on "Hochladen"
+    click_button "Hochladen"
   end
 end

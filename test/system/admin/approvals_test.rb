@@ -17,7 +17,7 @@ class Admin::ApprovalsTest < ApplicationSystemTestCase
     assert_selector "label", text: "Publizieren"
     check "Publizieren"
 
-    click_on "Editieren"
+    click_button "Editieren"
 
     assert_selector ".flash-success", text: "Beitrag editiert"
   end
