@@ -15,10 +15,19 @@ AllCops:
 Rails:
   Enabled: true
 
+Capybara/ClickLinkOrButtonStyle:
+  Enabled: true
+
 Capybara/MatchStyle:
   Enabled: true
 
 Capybara/NegationMatcher:
+  Enabled: true
+
+Capybara/RSpec/HaveSelector:
+  Enabled: true
+
+Capybara/RSpec/PredicateMatcher:
   Enabled: true
 
 Capybara/SpecificActions:
@@ -261,6 +270,9 @@ Rails/AttributeDefaultBlockValue:
 Rails/CompactBlank:
   Enabled: true
 
+Rails/DangerousColumnNames:
+  Enabled: true
+
 Rails/DeprecatedActiveModelErrorsMethods:
   Enabled: true
 
@@ -321,6 +333,9 @@ Rails/Pluck:
 Rails/PluckInWhere:
   Enabled: true
 
+Rails/RedundantActiveRecordAllMethod:
+  Enabled: true
+
 Rails/RedundantPresenceValidationOnBelongsTo:
   Enabled: true
 
@@ -343,6 +358,9 @@ Rails/RootPathnameMethods:
   Enabled: true
 
 Rails/RootPublicPath:
+  Enabled: true
+
+Rails/SelectMap:
   Enabled: true
 
 Rails/ShortI18n:
@@ -373,6 +391,9 @@ Rails/TransactionExitStatement:
   Enabled: true
 
 Rails/UnusedIgnoredColumns:
+  Enabled: true
+
+Rails/UnusedRenderContent:
   Enabled: true
 
 Rails/WhereEquals:
@@ -625,6 +646,9 @@ Style/SelectByRegexp:
   Enabled: true
 
 Style/SingleArgumentDig:
+  Enabled: true
+
+Style/SingleLineDoEndBlock:
   Enabled: true
 
 Style/SlicingWithRange:
