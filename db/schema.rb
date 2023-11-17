@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_29_084316) do
-
+ActiveRecord::Schema[7.1].define(version: 2021_12_29_084316) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,9 +19,9 @@ ActiveRecord::Schema.define(version: 2021_12_29_084316) do
     t.string "uploads"
     t.string "title"
     t.text "comment"
-    t.datetime "published_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "published_at", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
