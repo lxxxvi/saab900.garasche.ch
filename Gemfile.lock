@@ -325,11 +325,11 @@ DEPENDENCIES
   bugsnag
   capybara
   carrierwave-aws
-  debug (= 1.7.0)
+  debug
   haml-rails
   importmap-rails
   pagy
-  pg (>= 0.18)
+  pg
   propshaft
   puma
   rails
