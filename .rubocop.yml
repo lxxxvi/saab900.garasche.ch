@@ -8,7 +8,6 @@ AllCops:
   Exclude:
   - bin/**/*
   - db/schema.rb
-  - node_modules/**/*
   - tmp/**/*
   - vendor/**/*
 
@@ -16,6 +15,7 @@ Rails:
   Enabled: true
 
 Capybara/ClickLinkOrButtonStyle:
+  EnforcedStyle: strict
   Enabled: true
 
 Capybara/MatchStyle:
@@ -28,6 +28,9 @@ Capybara/RSpec/HaveSelector:
   Enabled: true
 
 Capybara/RSpec/PredicateMatcher:
+  Enabled: true
+
+Capybara/RedundantWithinFind:
   Enabled: true
 
 Capybara/SpecificActions:
@@ -144,7 +147,13 @@ Lint/IdentityComparison:
 Lint/IncompatibleIoSelectWithFiberScheduler:
   Enabled: true
 
+Lint/ItWithoutArgumentsInBlock:
+  Enabled: true
+
 Lint/LambdaWithoutLiteralBlock:
+  Enabled: true
+
+Lint/LiteralAssignmentInCondition:
   Enabled: true
 
 Lint/MissingSuper:
@@ -289,6 +298,9 @@ Rails/DurationArithmetic:
   Enabled: true
 
 Rails/EagerEvaluationLogMessage:
+  Enabled: true
+
+Rails/EnvLocal:
   Enabled: true
 
 Rails/ExpandedDateRange:
@@ -665,6 +677,9 @@ Style/StringConcatenation:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/SuperWithArgsParentheses:
+  Enabled: true
 
 Style/SwapValues:
   Enabled: true
