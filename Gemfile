@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.2"
+ruby "3.3.0"
 
 gem "bootsnap", require: false
 gem "bugsnag"
@@ -9,7 +9,7 @@ gem "carrierwave-aws"
 gem "haml-rails"
 gem "importmap-rails"
 gem "pagy"
-gem "pg", ">= 0.18"
+gem "pg"
 gem "propshaft"
 gem "puma"
 gem "rails"
@@ -19,7 +19,7 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
-  gem "debug", "1.7.0", platforms: %i[mri mingw x64_mingw]
+  gem "debug"
   gem "rubocop", require: false
   gem "rubocop-capybara", require: false
   gem "rubocop-rails", require: false
