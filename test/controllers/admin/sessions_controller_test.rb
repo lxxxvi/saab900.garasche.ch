@@ -8,7 +8,7 @@ class Admin::SessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "login fails" do
     post admin_session_path, params: { password: "wrong" }
-    assert_response :success
+    assert_response :unprocessable_entity
 
     assert_equal "Login fehlgeschlagen", flash[:alert]
   end

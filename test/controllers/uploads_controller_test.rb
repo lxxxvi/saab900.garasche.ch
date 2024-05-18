@@ -30,7 +30,7 @@ class UploadsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def assert_alert
-    assert_response :success
+    assert_response :unprocessable_entity
     assert_equal "Irgendwas hat nicht geklappt, versuchs nochmal ;-)", flash[:alert]
   end
 end
