@@ -18,7 +18,7 @@ class Admin::UploadsController < Admin::BaseController
       redirect_to admin_uploads_path
     else
       flash.now[:alert] = t(".alert")
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
