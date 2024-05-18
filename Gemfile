@@ -10,11 +10,12 @@ gem "haml-rails"
 gem "importmap-rails"
 gem "pagy"
 gem "pg"
-gem "propshaft"
 gem "puma"
 gem "rails"
+gem "sprockets-rails"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
+gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do

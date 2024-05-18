@@ -19,7 +19,21 @@ de:
         published_at: 'Publiziert am'
   errors:
     messages:
+      carrierwave_download_error: "konnte nicht heruntergeladen werden"
+      carrierwave_integrity_error: "ist kein erlaubter Dateityp"
+      carrierwave_processing_error: "konnte nicht verarbeitet werden"
+      content_type_allowlist_error: "Dateityp %{content_type} ist für den Upload nicht zulässig"
+      content_type_denylist_error: "Dateityp %{content_type} ist für den Upload nicht zulässig"
+      extension_allowlist_error: "Dateityp %{extension} ist für den Upload nicht zulässig. Erlaubte Dateitypen: %{allowed_types}"
+      extension_denylist_error: "Dateityp %{extension} ist für den Upload nicht zulässig. Verbotene Dateitypen: %{prohibited_types}"
+      max_height_error: "Das Bild sollte nicht höher als %{max_height} Pixel sein"
+      max_size_error: "Die Dateigröße muss kleiner als %{max_size} sein"
+      max_width_error: "Das Bild sollte nicht breiter als %{max_width} Pixel sein"
+      min_height_error: "Das Bild sollte höher als %{min_height} Pixel sein"
+      min_size_error: "Die Dateigröße muss größer als %{min_size} sein"
+      min_width_error: "Das Bild sollte breiter als %{min_width} Pixel sein"
       mini_magick_processing_error: "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}"
+      processing_error: "Verarbeitung fehlgeschlagen, vielleicht ist es kein Bild?"
   admin:
     sessions:
       login_first: 'Bitte zuerst einloggen'

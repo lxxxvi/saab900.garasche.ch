@@ -10,6 +10,7 @@ class UploadsController < ApplicationController
       flash[:notice] = t(".notice")
       redirect_to root_path
     else
+      Bugsnag.notify(@upload.errors.to_a)
       flash[:alert] = t(".alert")
       render :new, status: :unprocessable_entity
     end
