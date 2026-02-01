@@ -1,5 +1,6 @@
 class Admin::UploadsController < Admin::BaseController
   include Pagy::Backend
+
   before_action :set_upload, only: %w[edit update destroy]
 
   def index

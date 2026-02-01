@@ -1,7 +1,11 @@
 source "https://rubygems.org"
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.3.0"
+ruby "4.0.1"
+
+gem "benchmark"
+gem "cgi"
+gem "logger"
+gem "ostruct"
 
 gem "bootsnap", require: false
 gem "bugsnag"
@@ -11,7 +15,7 @@ gem "importmap-rails"
 gem "pagy"
 gem "pg"
 gem "puma"
-gem "rails"
+gem "rails", "~> 7.1.0"
 gem "sprockets-rails"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
@@ -20,7 +24,8 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   gem "debug"
-  gem "rubocop", require: false
+  gem "minitest", "~> 5.0"
+  gem "rubocop", "~> 1.84", require: false
   gem "rubocop-capybara", require: false
   gem "rubocop-rails", require: false
 end
