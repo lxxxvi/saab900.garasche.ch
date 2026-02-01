@@ -1,6 +1,6 @@
 ---
 
-require:
+plugins:
 - rubocop-capybara
 - rubocop-rails
 
@@ -18,10 +18,16 @@ Capybara/ClickLinkOrButtonStyle:
   EnforcedStyle: strict
   Enabled: true
 
+Capybara/FindAllFirst:
+  Enabled: true
+
 Capybara/MatchStyle:
   Enabled: true
 
 Capybara/NegationMatcher:
+  Enabled: true
+
+Capybara/NegationMatcherAfterVisit:
   Enabled: true
 
 Capybara/RSpec/HaveSelector:
@@ -369,7 +375,13 @@ Rails/ExpandedDateRange:
 Rails/FindById:
   Enabled: true
 
+Rails/FindByOrAssignmentMemoization:
+  Enabled: true
+
 Rails/FreezeTime:
+  Enabled: true
+
+Rails/HttpStatusNameConsistency:
   Enabled: true
 
 Rails/I18nLazyLookup:
@@ -402,10 +414,16 @@ Rails/MultipleRoutePaths:
 Rails/NegateInclude:
   Enabled: true
 
+Rails/OrderArguments:
+  Enabled: true
+
 Rails/Pluck:
   Enabled: true
 
 Rails/PluckInWhere:
+  Enabled: true
+
+Rails/RedirectBackOrTo:
   Enabled: true
 
 Rails/RedundantActiveRecordAllMethod:

@@ -11,7 +11,7 @@ class Admin::SessionsController < Admin::BaseController
       redirect_to admin_root_path
     else
       flash.now[:alert] = t(".alert")
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_content
     end
   end
 
