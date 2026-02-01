@@ -12,7 +12,7 @@ class UploadsController < ApplicationController
     else
       Bugsnag.notify(@upload.errors.to_a)
       flash[:alert] = t(".alert")
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_content
     end
   end
 

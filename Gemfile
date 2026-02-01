@@ -4,7 +4,6 @@ ruby "4.0.1"
 
 gem "benchmark"
 gem "cgi"
-gem "logger"
 gem "ostruct"
 
 gem "bootsnap", require: false
@@ -12,7 +11,7 @@ gem "bugsnag"
 gem "carrierwave-aws"
 gem "haml-rails"
 gem "importmap-rails"
-gem "pagy"
+gem "pagy", "< 43"
 gem "pg"
 gem "puma"
 gem "rails", "~> 8.1.0"
@@ -24,8 +23,8 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   gem "debug"
-  gem "minitest", "~> 5.0"
-  gem "rubocop", "~> 1.84", require: false
+  gem "minitest"
+  gem "rubocop", require: false
   gem "rubocop-capybara", require: false
   gem "rubocop-rails", require: false
 end
