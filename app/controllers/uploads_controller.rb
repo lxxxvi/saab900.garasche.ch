@@ -21,6 +21,6 @@ class UploadsController < ApplicationController
   def upload_params
     return unless params.include?(:upload)
 
-    params.require(:upload).permit(:file)
+    params.expect(upload: [:file])
   end
 end

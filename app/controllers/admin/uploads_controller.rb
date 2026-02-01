@@ -36,6 +36,6 @@ class Admin::UploadsController < Admin::BaseController
   end
 
   def admin_upload_params
-    params.require(:admin_upload).permit(:title, :comment, :publish)
+    params.expect(admin_upload: [:title, :comment, :publish])
   end
 end
