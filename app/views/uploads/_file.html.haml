@@ -2,4 +2,4 @@
   = image_tag record.file.url, class: "image-size--#{image_size}"
 - elsif record.file.content_type == 'application/pdf'
   .mb-4.h-48.icon--pdf{ class: "image-size--#{image_size}-pdf" }
-  = link_to record.title, record.file.url
+  = link_to record.title, record.file.url, class: "link"

@@ -1,5 +1,5 @@
 class Saab900Controller < ApplicationController
-  include Pagy::Backend
+  include Pagy::Method
 
   def show
     @pagy, @records = pagy(Upload.published.ordered_chronologically, items: 10)

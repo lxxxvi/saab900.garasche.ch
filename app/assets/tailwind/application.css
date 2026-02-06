@@ -1,26 +1,42 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 * {
   @apply font-serif;
 }
 
 .saab900 {
-  @apply shadow-2xl max-w-screen-sm mx-auto;
+  @apply shadow-2xl max-w-(--breakpoint-sm) mx-auto;
   display: grid;
   grid-template-rows: 1fr auto;
 }
 
 body {
-  @apply w-full h-full bg-center bg-gradient-to-br from-red-100 to-red-300;
+  @apply w-full h-full bg-center bg-linear-to-br from-red-100 to-red-300;
 }
 
-a {
+.link {
   @apply text-red-700;
 }
 
-a:hover {
+.link:hover {
   @apply text-red-500;
 }
 
@@ -38,7 +54,7 @@ input[type=text], textarea {
 }
 
 .button {
-  @apply py-2 px-6 border border-gray-500 bg-white rounded;
+  @apply py-2 px-6 border border-gray-500 bg-white rounded-sm;
 }
 
 .button:hover {
@@ -116,32 +132,81 @@ input[type=text], textarea {
   @apply border-green-500;
 }
 
-/* pagy */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.pagy-nav.pagination {
-  @apply isolate inline-flex -space-x-px rounded shadow-sm;
-}
+@layer components {
+  .pagy {
+/*
+    --B: 1;
+    --H: 0;
+    --S: 45;
+    --L: 60;
+    --A: 1;
+*/
+    --spacing: 0.3rem;
+    --padding: 0.75rem;
+    --rounding: 0rem;
+    --border-width: 0rem;
+    --font-size: 1rem;
+    --font-weight: 600;
+    --line-height: 2;
 
-.page.next a {
-  @apply relative inline-flex items-center rounded-r border border-gray-300 bg-white py-1 px-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
-}
+/*
+    --text:               hsl(var(--H) var(--S) calc(var(--L) - (30 * var(--B))));
+    --text-hover:         hsl(var(--H) var(--S) calc(var(--L) - (33 * var(--B))));
+    --text-current:       hsl(var(--H) var(--S) calc(100 * (var(--B) + 1)));
+    --background:         hsl(var(--H) var(--S) calc(var(--L) + (30 * var(--B))));
+    --background-hover:   hsl(var(--H) var(--S) calc(var(--L) + (20 * var(--B))));
+    --background-current: hsl(var(--H) var(--S) var(--L));
+    --background-input:   hsl(var(--H) var(--S) calc(var(--L) + (45 * var(--B))));
+    --opacity: 1;
+*/
 
-.page.prev a {
-  @apply relative inline-flex items-center rounded-l border border-gray-300 bg-white py-1 px-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
-}
+    --text:               var(--color-red-800);
+    --text-hover:         var(--color-red-800);
+    --text-current:       #fff;
+    --background:         var(--color-red-100);
+    --background-hover:   var(--color-red-300);
+    --background-current: var(--color-red-800);
+    --background-input:   var(--color-red-800);
+    --opacity: 1;
 
-.page.next.disabled {
-  @apply relative inline-flex items-center rounded-r border border-gray-300 bg-slate-100 py-1 px-4 text-sm font-medium text-gray-500  focus:z-20;
-}
+    @apply flex gap-x-[var(--spacing)] font-[var(--font-weight)]
+    text-[length:var(--font-size)] text-[var(--text)]
+    leading-[var(--line-height)];
 
-.page.prev.disabled {
-  @apply relative inline-flex items-center rounded-l border border-gray-300 bg-slate-100 py-1 px-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
-}
+    a:not([role="separator"]) { /* all but gaps */
+      @apply block rounded-[var(--rounding)] px-[var(--padding)] py-[calc(var(--padding)/3)] bg-[var(--background)]
+      border-solid  border-[var(--background-current)] border-[length:var(--border-width)] opacity-[var(--opacity)];
+    }
 
-.page a, .page.gap {
-  @apply bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center border px-4 py-1 text-sm font-medium focus:z-20;
-}
+    a[href]:hover { /* all links on hover */
+      @apply bg-[var(--background-hover)] text-[var(--text-hover)];
+    }
 
-.page.active {
-  @apply z-10 border-red-700 bg-red-50 text-red-700 relative inline-flex items-center border px-4 py-1 text-sm font-medium focus:z-20;
+    a:not([href]) { /* all but links */
+      @apply cursor-default
+    }
+
+    a[role="link"]:not([aria-current]) { /* disabled links */
+      @apply opacity-[calc(var(--opacity)*.6)];
+    }
+
+    a[aria-current] {  /* current page */
+      @apply bg-[var(--background-current)] text-[var(--text-current)];
+    }
+
+    label {
+      @apply inline-block whitespace-nowrap rounded-[var(--rounding)] px-[var(--padding)]
+      py-[calc(var(--padding)/3-var(--border-width))]
+      bg-[var(--background)] border-solid border-[length:var(--border-width)] border-[var(--background-current)];
+
+      input {
+        @apply text-[var(--text)] text-[length:var(--font-size)] leading-[var(--line-height)] rounded-[calc(var(--rounding)/2)]
+        font-[var(--font-weight)] bg-[var(--background-input)] border-[length:var(--border-width)] border-[var(--background-current)];
+      }
+    }
+  }
 }

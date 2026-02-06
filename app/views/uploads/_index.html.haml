@@ -1,7 +1,7 @@
 - if records.any?
 
   .flex.justify-center
-    = raw pagy_nav(@pagy) if @pagy.pages > 1
+    = raw @pagy.series_nav if @pagy.pages > 1
 
   %ul.text-center
     - records.each do |record|
@@ -9,7 +9,7 @@
         = render 'uploads/file', record: record, image_size: :gallery
 
   .flex.justify-center
-    = raw pagy_nav(@pagy) if @pagy.pages > 1
+    = raw @pagy.series_nav if @pagy.pages > 1
 
 
 - else
