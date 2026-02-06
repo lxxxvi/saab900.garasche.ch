@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2021_12_29_084316) do
+ActiveRecord::Schema[8.1].define(version: 2021_12_29_084316) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
 
   create_table "uploads", force: :cascade do |t|
-    t.string "file", null: false
-    t.string "uploads"
-    t.string "title"
     t.text "comment"
-    t.datetime "published_at", precision: nil
     t.datetime "created_at", null: false
+    t.string "file", null: false
+    t.datetime "published_at", precision: nil
+    t.string "title"
     t.datetime "updated_at", null: false
+    t.string "uploads"
   end
-
 end
