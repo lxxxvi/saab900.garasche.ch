@@ -5,12 +5,14 @@
     %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", :name => "viewport"}/
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "German", :name => "Language"}
+    %meta{:content => "false", :name => "turbo-prefetch"}
     %title Saab 900
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "tailwind", 'application', "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
+    =# raw Pagy.dev_tools
     .saab900
       %main.bg-white
         .mb-16
@@ -25,4 +27,4 @@
           = t('footer').html_safe
         .location.text-center.text-xs.mt-10
           .icon--map.h-8.bg-center.mb-2
-          = link_to '47.3938250, 8.0445262', 'https://osm.org/go/0CeelcEIu--?node=3927147277', target: '_blank', rel: 'noopener noreferrer'
+          = link_to '47.3938250, 8.0445262', 'https://osm.org/go/0CeelcEIu--?node=3927147277', target: '_blank', rel: 'noopener noreferrer', class: "link"

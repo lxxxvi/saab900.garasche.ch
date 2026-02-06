@@ -2,7 +2,7 @@
   .w-full
     = render 'uploads/file', record: form.object, image_size: :original
     - if form.pdf?
-      = link_to form.object.file.file.original_filename
+      = link_to form.object.file.file.original_filename, class: "link"
 
 = form_with model: form, method: :patch do |f|
   .flex.mb-8
@@ -28,4 +28,4 @@
     .w-full
       = submit_tag t('.submit'), class: 'button button-red'
 
-= link_to t('general.back'), admin_uploads_path
+= link_to t('general.back'), admin_uploads_path, class: "link"

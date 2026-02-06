@@ -1,5 +1,5 @@
 class Admin::UploadsController < Admin::BaseController
-  include Pagy::Backend
+  include Pagy::Method
 
   before_action :set_upload, only: %w[edit update destroy]
 
