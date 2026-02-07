@@ -33,15 +33,19 @@ body {
 }
 
 .link {
-  @apply text-red-700;
+  @apply text-red-700 cursor-pointer;
 }
 
 .link:hover {
   @apply text-red-500;
 }
 
-label {
-  @apply block text-xs;
+.underlined-link {
+  @apply underline underline-offset-2 cursor-pointer;
+}
+
+.label {
+  @apply block;
 }
 
 input[type=text], textarea {
@@ -90,13 +94,13 @@ input[type=text], textarea {
 
 .image-size--thumbnail {
   @apply max-w-full block;
-  max-height: 10vh;
+  max-height: 25vh;
 }
 
 .image-size--thumbnail-pdf,
 .image-size--original-pdf {
   @apply max-w-full block;
-  height: 10vh;
+  height: 25vh;
 }
 
 .image-size--gallery-pdf {

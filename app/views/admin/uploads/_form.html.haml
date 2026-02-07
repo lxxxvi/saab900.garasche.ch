@@ -1,31 +1,25 @@
-.mb-8
-  .w-full
-    = render 'uploads/file', record: form.object, image_size: :original
+.grid.grid-cols-12.gap-4.bg-white.p-4
+  .col-span-6.flex.justify-center
+    = render 'uploads/file', record: form.object, image_size: :thumbnail
     - if form.pdf?
       = link_to form.object.file.file.original_filename, class: "link"
+  .col-span-6
+    = form_with model: form, method: :patch do |f|
+      .flex.flex-col.gap-y-8
+        .w-full
+          = f.label :title, Upload.human_attribute_name(:title), class: "label"
+          = f.text_field :title,
+                         class: 'w-full',
+                         placeholder: f.object.title_required? ? t('general.input_required') : nil
+          - if f.object.errors.include?(:title)
+            .text-red-500.text-xs
+              - f.object.errors.full_messages_for(:title).each do |e|
+                = e
 
-= form_with model: form, method: :patch do |f|
-  .flex.mb-8
-    .w-full
-      = f.label :title, Upload.human_attribute_name(:title)
-      = f.text_field :title,
-                     class: 'w-1/2',
-                     placeholder: f.object.title_required? ? t('general.input_required') : nil
-      - if f.object.errors.include?(:title)
-        .text-red-500.text-xs
-          - f.object.errors.full_messages_for(:title).each do |e|
-            = e
-
-  .flex.mb-8
-    .w-full
-      = f.label :comment, Upload.human_attribute_name(:comment)
-      = f.text_area :comment, class: 'w-1/2'
-  .flex.mb-8
-    .w-full
-      = f.label :publish, t('.publish')
-      = f.check_box :publish
-  .flex.my-4
-    .w-full
-      = submit_tag t('.submit'), class: 'button button-red'
-
-= link_to t('general.back'), admin_uploads_path, class: "link"
+        .flex
+          .w-full
+            = f.label :comment, Upload.human_attribute_name(:comment), class: "label"
+            = f.text_area :comment, class: 'w-full'
+        .flex.justify-end.gap-x-8.items-center
+          = link_to t('general.back'), admin_uploads_path, class: "link"
+          = submit_tag t('.submit'), class: 'button button-red'
