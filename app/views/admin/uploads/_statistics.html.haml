@@ -1,5 +1,6 @@
-.flex.justify-start.gap-x-4.text-sm
-  %span.statistics--published-count.bg-green-300.px-4.py-1.rounded-full.opacity-80
-    = t("admin.uploads.shared.published_count", count: upload_statistics[true])
-  %span.statistics--not-published-count.bg-indigo-300.px-4.py-1.rounded-full.opacity-80
-    = t("admin.uploads.shared.not_published_count", count: upload_statistics[false])
+= turbo_frame_tag :statistics do
+  .flex.justify-start.gap-x-4.text-sm
+    %span.statistics--published-count.bg-green-300.px-4.py-1.rounded-full.opacity-80
+      = t("admin.uploads.shared.published_count", count: upload_statistics[true])
+    %span.statistics--not-published-count.bg-indigo-300.px-4.py-1.rounded-full.opacity-80
+      = t("admin.uploads.shared.not_published_count", count: upload_statistics[false])

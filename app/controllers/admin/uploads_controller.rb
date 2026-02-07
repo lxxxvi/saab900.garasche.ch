@@ -16,7 +16,11 @@ class Admin::UploadsController < Admin::BaseController
     @upload_form = Admin::UploadForm.new(@upload, admin_upload_params)
 
     if @upload_form.save
-      redirect_to admin_uploads_path
+      respond_to do |format|
+        format.turbo_stream
+
+        format.html { redirect_to admin_uploads_path }
+      end
     else
       render :edit, status: :unprocessable_content
     end
