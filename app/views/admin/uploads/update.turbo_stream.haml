@@ -1,0 +1,6 @@
+= turbo_stream.replace @upload_form.object do
+  = render partial: "admin/uploads/show", locals: { record: @upload_form.object }
+
+- if @upload_form.object.published_at_previously_changed?
+  = turbo_stream.replace :statistics do
+    = render partial: "admin/uploads/statistics", locals: { upload_statistics: Upload::Statistics.call }
