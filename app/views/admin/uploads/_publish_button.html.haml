@@ -1,0 +1,10 @@
+- if record.published?
+  - label = t("admin.uploads.shared.unpublish")
+  - custom_classes = "text-indigo-600"
+  - publish_value = "0"
+- else
+  - label = t("admin.uploads.shared.publish")
+  - custom_classes = "text-green-600"
+  - publish_value = "1"
+
+= button_to label, admin_upload_path(record), method: :patch, class: "underlined-link #{custom_classes} hover:opacity-70", params: { admin_upload: { publish: publish_value } }

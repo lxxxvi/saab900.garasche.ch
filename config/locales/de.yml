@@ -46,19 +46,28 @@ de:
         alert: 'Ups, da hat was nicht geklappt.'
       form:
         publish: 'Publizieren'
-        submit: 'Editieren'
+        submit: 'Bearbeiten'
       destroy:
         success: 'Beitrag gelöscht'
-      index:
+      shared:
         contribution:
           one: 'Beitrag'
           other: 'Beiträge'
+        not_published: "Nicht publiziert"
+        publish: "Publizieren"
+        published_count:
+          one: "1 publizierter Beitrag"
+          other: "%{count} publizierte Beiträge"
         publishable: 'Publizierbar'
         publishable_contributions:
           one: 'Es gibt 1 unpublizierter Beitrag'
           other: 'Es gibt %{count} unpublizierte Beiträge'
         published: 'Publiziert'
         status: 'Status'
+        unpublish: "Unpublizieren"
+        not_published_count:
+          one: "1 nicht publizierter Beitrag"
+          other: "%{count} nicht publizierte Beiträge"
 
   footer: |
     ein pensioniertes, weiterlebendes Gefährt<br />
@@ -70,11 +79,14 @@ de:
     <br />
     um den Vorschriften zu entsprechen, wird das Objekt alle 2-3 Monate um eine kurze Strecke bewegt.
   general:
+    are_you_sure_questionmark: "Bist du sicher?"
     input_required: 'Eingabe erforderlich'
     back: 'Zurück'
+    cancel: 'Abbrechen'
     confirm: 'Bestätigen'
     delete: 'Löschen'
-    edit: 'Editieren'
+    edit: 'Bearbeiten'
+    no_entries: "Noch keine Einträge"
     password: 'Passwort'
     sign_in: 'Einloggen'
     sign_out: 'Ausloggen'

@@ -8,17 +8,18 @@
     = stylesheet_link_tag "tailwind", 'application', "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
-    .m-4
-      - if admin_signed_in?
-        = button_to t('general.sign_out'),
-                    admin_session_path,
-                    method: :delete,
-                    class: 'text-xs float-right'
-      .text-xl.text-red-800.border-b.mb-8 Saab 900 Admin
+    .flex.flex-col.max-w-6xl
+      .m-4.flex.justify-between
+        .text-xl.text-red-800.border-b.mb-8 Saab 900 Admin
+        - if admin_signed_in?
+          = button_to t('general.sign_out'),
+                      admin_session_path,
+                      method: :delete,
+                      class: 'link text-sm'
 
-      - if flash.any?
-        .mb-4
+      .m-4.flex.flex-col.gap-y-4
+        - if flash.any?
           - flash.each do |key, message|
             .flash{ class: "flash-#{key}" }= message
 
-      = yield
+        = yield

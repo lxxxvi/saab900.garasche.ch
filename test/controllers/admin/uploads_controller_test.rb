@@ -35,7 +35,6 @@ class Admin::UploadsControllerTest < ActionDispatch::IntegrationTest
 
     follow_redirect!
     assert_response :success
-    assert_equal "Beitrag editiert", flash[:success]
   end
 
   test "unpublish upload" do
@@ -58,7 +57,6 @@ class Admin::UploadsControllerTest < ActionDispatch::IntegrationTest
 
     follow_redirect!
     assert_response :success
-    assert_equal "Beitrag editiert", flash[:success]
   end
 
   test "destroy" do
@@ -70,6 +68,5 @@ class Admin::UploadsControllerTest < ActionDispatch::IntegrationTest
 
     follow_redirect!
     assert_response :success
-    assert_equal "Beitrag gelöscht", flash[:success]
   end
 end

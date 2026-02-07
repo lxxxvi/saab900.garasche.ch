@@ -4,6 +4,7 @@ class Admin::UploadsController < Admin::BaseController
   before_action :set_upload, only: %w[edit update destroy]
 
   def index
+    @upload_statistics = Upload::Statistics.call
     @pagy, @records = pagy(Upload.ordered_chronologically)
   end
 
@@ -15,17 +16,14 @@ class Admin::UploadsController < Admin::BaseController
     @upload_form = Admin::UploadForm.new(@upload, admin_upload_params)
 
     if @upload_form.save
-      flash[:success] = t(".success")
       redirect_to admin_uploads_path
     else
-      flash.now[:alert] = t(".alert")
       render :edit, status: :unprocessable_content
     end
   end
 
   def destroy
     @upload.destroy!
-    flash[:success] = t(".success")
     redirect_to admin_uploads_path
   end
 

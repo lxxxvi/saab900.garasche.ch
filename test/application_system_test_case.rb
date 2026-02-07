@@ -14,7 +14,6 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     visit admin_root_path
     fill_in "Passwort", with: "admin"
     click_button "Einloggen"
-    assert_selector "h1", text: "Beiträge"
   end
 
   def sign_out

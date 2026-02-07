@@ -1,59 +1,8 @@
-- publishable_count = Upload.publishable.count
+= render "admin/uploads/statistics", upload_statistics: @upload_statistics
 
-- if publishable_count.positive?
-  %p.my-10.border-red-500.border.p-4
-    = t('.publishable_contributions', count: publishable_count)
-
-%h1= t('.contribution', count: 2)
-
-- if @records.any?
-  - @records.each do |record|
-    .flex.border.border-gray-300.my-16.bg-gray-100
-      .w-full
-        .w-full.text-center.mb-2
-          - if record.publishable?
-            = link_to t('.publishable'),
-                      edit_admin_upload_path(record),
-                      class: 'py-1 bg-yellow-600 block w-full text-white hover:text-white hover:bg-yellow-500'
-          - else
-            .py-1.bg-green-600.block.w-full.text-white
-              = t('.published')
-
-        .flex.gap-x-4
-          %div{ class: 'w-1/6' }
-            = render 'uploads/file', record: record, image_size: :thumbnail
-          .flex.flex-col
-            .flex.flex-col.gap-y-4
-              %div
-                .tracking-wide.uppercase.text-red-400.text-xs
-                  = Upload.human_attribute_name(:title)
-                = record.title
-              %div
-                .tracking-wide.uppercase.text-red-400.text-xs
-                  = Upload.human_attribute_name(:comment)
-                = record.comment
-              - if record.published_at.present?
-                %div
-                  .tracking-wide.uppercase.text-red-400.text-xs
-                    = Upload.human_attribute_name(:published_at)
-                  = record.published_at
-
-            .flex.gap-x-4.pt-8.pb-2
-              = link_to t('general.edit'),
-                        edit_admin_upload_path(record),
-                        class: 'py-1 inline-block'
-
-              .flex.gap-x-2{ 'data-controller': 'confirmable', 'data-confirmable-confirmable-button-text-value': t('general.delete'), 'data-confirmable-ultimate-button-text-value': t('general.confirm') }
-                = button_tag t('general.confirm'), role: :button, class: 'hidden py-1 px-4 text-gray-600 hover:bg-red-600 hover:text-white transition', 'data-confirmable-target': 'confirmableButton', 'data-action': 'confirmable#showUltimateButton'
-
-                = button_to t('general.delete'),
-                            admin_upload_path(record),
-                            method: :delete,
-                            class: 'py-1 px-4 text-gray-600 hover:bg-red-600 hover:text-white transition',
-                            'data-confirmable-target': 'ultimateButton'
-
-                = button_tag t('general.cancel'), role: :button, class: 'hidden py-1 px-4 text-gray-400 hover:text-gray-900', 'data-confirmable-target': 'cancelButton', 'data-action': 'confirmable#hideUltimateButton'
-
-
-- else
-  none
+.flex.flex-col.gap-y-4
+  - if @records.any?
+    - @records.each do |record|
+      = render "admin/uploads/show", record:
+  - else
+    = t("general.no_entries")

@@ -1,0 +1,9 @@
+- if published
+  - label = t('admin.uploads.shared.published')
+  - custom_classes = "bg-green-400"
+- else
+  - label = t('admin.uploads.shared.not_published')
+  - custom_classes = "bg-indigo-200"
+
+%span{ class: "rounded-full text-xs px-3 #{custom_classes}"}
+  = label

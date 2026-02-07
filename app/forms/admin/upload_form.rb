@@ -39,7 +39,7 @@ class Admin::UploadForm
   private
 
   def publish?
-    publish == "1"
+    ActiveRecord::Type::Boolean.new.cast(publish)
   end
 
   def determine_published_at
