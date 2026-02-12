@@ -28,6 +28,11 @@
           = Upload.human_attribute_name(:comment)
         %dd
           = record.comment.presence || "-"
+      %dl
+        %dt.text-gray-400.text-xs.uppercase
+          = Upload.human_attribute_name(:created_at)
+        %dd
+          = record.created_at&.to_fs(:db) || "-"
 
       - if record.published?
         %dl

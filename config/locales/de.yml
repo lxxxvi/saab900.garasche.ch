@@ -17,6 +17,7 @@ de:
         title: 'Beschreibung'
         comment: 'Kommentar'
         published_at: 'Publiziert am'
+        created_at: "Hochgeladen am"
   errors:
     messages:
       blank: "muss ausgefüllt werden"
