@@ -19,6 +19,7 @@ de:
         published_at: 'Publiziert am'
   errors:
     messages:
+      blank: "muss ausgefüllt werden"
       carrierwave_download_error: "konnte nicht heruntergeladen werden"
       carrierwave_integrity_error: "ist kein erlaubter Dateityp"
       carrierwave_processing_error: "konnte nicht verarbeitet werden"
