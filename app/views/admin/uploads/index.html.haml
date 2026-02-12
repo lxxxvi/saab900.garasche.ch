@@ -8,3 +8,6 @@
       = render "admin/uploads/show", record:
   - else
     = t("general.no_entries")
+
+.flex.justify-end
+  = raw @pagy.series_nav if @pagy.pages > 1
