@@ -117,6 +117,9 @@ Lint/ConstantReassignment:
 Lint/CopDirectiveSyntax:
   Enabled: true
 
+Lint/DataDefineOverride:
+  Enabled: true
+
 Lint/DeprecatedConstants:
   Enabled: true
 
@@ -274,6 +277,9 @@ Lint/UnmodifiedReduceAccumulator:
   Enabled: true
 
 Lint/UnreachableLoop:
+  Enabled: true
+
+Lint/UnreachablePatternBranch:
   Enabled: true
 
 Lint/UselessConstantScoping:
@@ -618,6 +624,9 @@ Style/FileEmpty:
 Style/FileNull:
   Enabled: true
 
+Style/FileOpen:
+  Enabled: true
+
 Style/FileRead:
   Enabled: true
 
@@ -687,6 +696,9 @@ Style/MapCompactWithConditionalBlock:
 Style/MapIntoArray:
   Enabled: true
 
+Style/MapJoin:
+  Enabled: true
+
 Style/MapToHash:
   Enabled: true
 
@@ -723,6 +735,9 @@ Style/NumberedParametersLimit:
 Style/ObjectThen:
   Enabled: true
 
+Style/OneClassPerFile:
+  Enabled: true
+
 Style/OpenStructUse:
   Enabled: true
 
@@ -732,7 +747,16 @@ Style/OperatorMethodCall:
 Style/OptionalBooleanParameter:
   Enabled: true
 
+Style/PartitionInsteadOfDoubleSelect:
+  Enabled: true
+
+Style/PredicateWithKind:
+  Enabled: true
+
 Style/QuotedSymbols:
+  Enabled: true
+
+Style/ReduceToHash:
   Enabled: true
 
 Style/RedundantArgument:
@@ -783,6 +807,9 @@ Style/RedundantInterpolationUnfreeze:
 Style/RedundantLineContinuation:
   Enabled: true
 
+Style/RedundantMinMaxBy:
+  Enabled: true
+
 Style/RedundantRegexpArgument:
   Enabled: true
 
@@ -811,6 +838,12 @@ Style/ReverseFind:
   Enabled: true
 
 Style/SafeNavigationChainLength:
+  Enabled: true
+
+Style/SelectByKind:
+  Enabled: true
+
+Style/SelectByRange:
   Enabled: true
 
 Style/SelectByRegexp:
@@ -851,6 +884,9 @@ Style/SwapValues:
 
 Style/SymbolArray:
   Enabled: false
+
+Style/TallyMethod:
+  Enabled: true
 
 Style/YAMLFileRead:
   Enabled: true
