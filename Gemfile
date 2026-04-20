@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "4.0.1"
+ruby "4.0.2"
 
 gem "benchmark"
 gem "cgi"
@@ -35,5 +35,5 @@ end
 
 group :test do
   gem "capybara"
-  gem "webdrivers"
+  gem "selenium-webdriver"
 end
